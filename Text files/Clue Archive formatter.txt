@@ -1,0 +1,19 @@
+Format the following crossword answers and clues as TSV.
+For each clue, output: ANSWER<TAB>ENUMERATION<TAB>CLUE
+Use a literal tab character (\t) between columns — do not use spaces to align the text.
+Match answers to clues in the order given (Across first, then Down).
+Preserve exact casing, punctuation, and enumeration for ENUMERATION and CLUE.
+
+In the ANSWER column, convert to uppercase and remove all spaces and punctuation (hyphens, apostrophes, periods, commas, etc.), normalizing diacritics to plain A–Z; ANSWER must contain only A–Z characters after normalization (e.g., “Côte d’Azur” → “COTEDAZUR”).
+
+Output only the TSV lines, with actual tab characters between fields, and place the entire TSV inside a single code block so the tabs are preserved when copied.
+
+Examples:
+
+ROBROY	3,3	Cocktail of grog discovered by dude on Fourth of July
+ESPRESSO	8	Joe is in Madrid marketing oil company
+ABALONE	7	Austria sausage mostly fish?
+FLAKE	5	Fudge coating large chocolate bar
+ENCHILADA	9	Spanish dish as starter in eatery: 50% off chillies wrapped in nothing?
+
+========== 
