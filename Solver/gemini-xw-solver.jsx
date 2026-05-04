@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { Check, Brain, X, Play, Pause, BookOpen, AlertCircle, RefreshCw, Search, Activity, Scale, Zap } from 'lucide-react';
 
 // --- CONFIGURATION ---
-const apiKey = "AIzaSyCgrU5U-kbjx5VN-HjN2Zoh8www6hnKXes";
+const apiKey = "";
 const MODEL_NAME = 'gemini-3.1-pro-preview';
 const STAGNATION_TIMEOUT = 5000;  // 5 seconds before adding a helper
 const MAX_SCALABLE_WORKERS = 250;  // Increased cap
