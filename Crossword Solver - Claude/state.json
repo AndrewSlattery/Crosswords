@@ -1,0 +1,1691 @@
+{
+  "rows": 15,
+  "cols": 15,
+  "entries": [
+    {
+      "id": "1A",
+      "direction": "across",
+      "number": 1,
+      "clue": "Would rozzers (PCs) suspect all this? (9,6)",
+      "length": 15,
+      "enumeration": [
+        9,
+        6
+      ],
+      "cells": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "CROSSWORD PUZZLE",
+          "confidence": 0.99,
+          "parse": "<all this> CROSSWORD PUZZLE = (WOULD ROZZERS PCS)* <suspect>",
+          "source": "solver"
+        },
+        {
+          "answer": "CROSSWORD PUZZLE",
+          "confidence": 0.95,
+          "parse": "<&cd> CROSSWORD PUZZLE {all this = the puzzle itself; rozzers/PCs (police) might suspect a coded message in it}",
+          "source": "solver"
+        }
+      ],
+      "committed": "CROSSWORD PUZZLE",
+      "committed_confidence": 0.99,
+      "parse": "<all this> CROSSWORD PUZZLE = (WOULD ROZZERS PCS)* <suspect>",
+      "verified": null
+    },
+    {
+      "id": "1D",
+      "direction": "down",
+      "number": 1,
+      "clue": "Silent about one going after rogue element (7)",
+      "length": 7,
+      "enumeration": [
+        7
+      ],
+      "cells": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          6,
+          0
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "CADMIUM",
+          "confidence": 0.95,
+          "parse": "<element> CADMIUM = CAD (rogue) + MUM (silent) outside I (one) <after rogue>",
+          "source": "solver"
+        }
+      ],
+      "committed": "CADMIUM",
+      "committed_confidence": 0.95,
+      "parse": "<element> CADMIUM = CAD (rogue) + MUM (silent) outside I (one) <after rogue>",
+      "verified": null
+    },
+    {
+      "id": "2D",
+      "direction": "down",
+      "number": 2,
+      "clue": "Start to regain consciousness, despite anaesthesiologist's conclusions (5)",
+      "length": 5,
+      "enumeration": [
+        5
+      ],
+      "cells": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "ONSET",
+          "confidence": 0.97,
+          "parse": "<Start> ONSET = t_O regai_N consciousnes_S despit_E anaesthesiologis_T (conclusions)",
+          "source": "solver"
+        }
+      ],
+      "committed": "ONSET",
+      "committed_confidence": 0.97,
+      "parse": "<Start> ONSET = t_O regai_N consciousnes_S despit_E anaesthesiologis_T (conclusions)",
+      "verified": null
+    },
+    {
+      "id": "3D",
+      "direction": "down",
+      "number": 3,
+      "clue": "Jacket accessory ought to drape differently (8,3)",
+      "length": 11,
+      "enumeration": [
+        8,
+        3
+      ],
+      "cells": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          4
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "SHOULDER PAD",
+          "confidence": 0.95,
+          "parse": "<jacket accessory> SHOULDER PAD = SHOULDER (ought to bear) + PAD (drape differently?)",
+          "source": "solver"
+        }
+      ],
+      "committed": "SHOULDER PAD",
+      "committed_confidence": 0.95,
+      "parse": "<jacket accessory> SHOULDER PAD = SHOULDER (ought to bear) + PAD (drape differently?)",
+      "verified": null
+    },
+    {
+      "id": "4D",
+      "direction": "down",
+      "number": 4,
+      "clue": "Deliveries by comedian go too far (9)",
+      "length": 9,
+      "enumeration": [
+        9
+      ],
+      "cells": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "OVERSHOOT",
+          "confidence": 0.97,
+          "parse": "<go too far> OVERSHOOT = OVERS (deliveries, cricket) + HOOT (comedian, 'a hoot')",
+          "source": "solver"
+        },
+        {
+          "answer": "OVERREACT",
+          "confidence": 0.92,
+          "parse": "<go too far> OVERREACT = OVER (deliveries, in cricket) + RE (by) + ACT (comedian)",
+          "source": "solver"
+        }
+      ],
+      "committed": "OVERSHOOT",
+      "committed_confidence": 0.97,
+      "parse": "<go too far> OVERSHOOT = OVERS (deliveries, cricket) + HOOT (comedian, 'a hoot')",
+      "verified": null
+    },
+    {
+      "id": "5D",
+      "direction": "down",
+      "number": 5,
+      "clue": "Group of Chicago CSI detectives going over nightclub (5)",
+      "length": 5,
+      "enumeration": [
+        5
+      ],
+      "cells": [
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "DISCO",
+          "confidence": 0.99,
+          "parse": "<nightclub> DISCO = \u2190(.chica.g)OCSID(e.tectives)\u2190 <going over, reverse hidden in 'chicago CSI detectives'>",
+          "source": "solver"
+        },
+        {
+          "answer": "DISCO",
+          "confidence": 0.8,
+          "parse": "<nightclub> DISCO = D + \u2190CSI\u2190 (going over) + O",
+          "source": "solver"
+        }
+      ],
+      "committed": "DISCO",
+      "committed_confidence": 0.99,
+      "parse": "<nightclub> DISCO = \u2190(.chica.g)OCSID(e.tectives)\u2190 <going over, reverse hidden in 'chicago CSI detectives'>",
+      "verified": null
+    },
+    {
+      "id": "6D",
+      "direction": "down",
+      "number": 6,
+      "clue": "Card game with queen but not jack (3)",
+      "length": 3,
+      "enumeration": [
+        3
+      ],
+      "cells": [
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "UNO",
+          "confidence": 0.99,
+          "parse": "<card game> UNO = JUNO <queen, Roman goddess> - J <jack>",
+          "source": "solver"
+        },
+        {
+          "answer": "UNO",
+          "confidence": 0.85,
+          "parse": "<card game> UNO {Spanish for 'one' / has QUEEN-letter coverage but no J of jack}",
+          "source": "solver"
+        }
+      ],
+      "committed": "UNO",
+      "committed_confidence": 0.99,
+      "parse": "<card game> UNO = JUNO <queen, Roman goddess> - J <jack>",
+      "verified": true
+    },
+    {
+      "id": "7D",
+      "direction": "down",
+      "number": 7,
+      "clue": "Prophet from Australia upset at critic? (9)",
+      "length": 9,
+      "enumeration": [
+        9
+      ],
+      "cells": [
+        [
+          0,
+          12
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          8,
+          12
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "ZOROASTER",
+          "confidence": 0.95,
+          "parse": "<prophet> ZOROASTER = \u2190OZ\u2190 (Australia upset) + ROASTER (critic)",
+          "source": "solver"
+        }
+      ],
+      "committed": "ZOROASTER",
+      "committed_confidence": 0.95,
+      "parse": "<prophet> ZOROASTER = \u2190OZ\u2190 (Australia upset) + ROASTER (critic)",
+      "verified": null
+    },
+    {
+      "id": "8D",
+      "direction": "down",
+      "number": 8,
+      "clue": "Words displayed here preceding a German article (1-6)",
+      "length": 7,
+      "enumeration": [
+        1,
+        6
+      ],
+      "cells": [
+        [
+          0,
+          14
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          2,
+          14
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          5,
+          14
+        ],
+        [
+          6,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "E-READER",
+          "confidence": 0.85,
+          "parse": "<words displayed here> E-READER = E + REA + DER (German article at end)",
+          "source": "solver"
+        }
+      ],
+      "committed": "E-READER",
+      "committed_confidence": 0.85,
+      "parse": "<words displayed here> E-READER = E + REA + DER (German article at end)",
+      "verified": null
+    },
+    {
+      "id": "9A",
+      "direction": "across",
+      "number": 9,
+      "clue": "Bride so excited to take off clothes (7)",
+      "length": 7,
+      "enumeration": [
+        7
+      ],
+      "cells": [
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "DISROBE",
+          "confidence": 0.98,
+          "parse": "(BRIDE SO)* <to take off clothes>",
+          "source": "solver"
+        }
+      ],
+      "committed": "DISROBE",
+      "committed_confidence": 0.98,
+      "parse": "(BRIDE SO)* <to take off clothes>",
+      "verified": null
+    },
+    {
+      "id": "10A",
+      "direction": "across",
+      "number": 10,
+      "clue": "Search outside of Google for cause of affliction (7)",
+      "length": 7,
+      "enumeration": [
+        7
+      ],
+      "cells": [
+        [
+          2,
+          8
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          2,
+          12
+        ],
+        [
+          2,
+          13
+        ],
+        [
+          2,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "SCOURGE",
+          "confidence": 0.98,
+          "parse": "<cause of affliction> SCOURGE = SCOUR + GE (outside of \"GooglE\")",
+          "source": "solver"
+        }
+      ],
+      "committed": "SCOURGE",
+      "committed_confidence": 0.98,
+      "parse": "<cause of affliction> SCOURGE = SCOUR + GE (outside of \"GooglE\")",
+      "verified": null
+    },
+    {
+      "id": "11A",
+      "direction": "across",
+      "number": 11,
+      "clue": "Acquired secrets via home telephone (5)",
+      "length": 5,
+      "enumeration": [
+        5
+      ],
+      "cells": [
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "INTEL",
+          "confidence": 0.95,
+          "parse": "<acquired secrets> INTEL = IN (home) + TEL (telephone)",
+          "source": "solver"
+        }
+      ],
+      "committed": "INTEL",
+      "committed_confidence": 0.95,
+      "parse": "<acquired secrets> INTEL = IN (home) + TEL (telephone)",
+      "verified": null
+    },
+    {
+      "id": "12A",
+      "direction": "across",
+      "number": 12,
+      "clue": "Ride going downhill as Spooner's lover was loud in bed? (9)",
+      "length": 9,
+      "enumeration": [
+        9
+      ],
+      "cells": [
+        [
+          4,
+          6
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          4,
+          10
+        ],
+        [
+          4,
+          11
+        ],
+        [
+          4,
+          12
+        ],
+        [
+          4,
+          13
+        ],
+        [
+          4,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "SNOWBOARD",
+          "confidence": 0.99,
+          "parse": "<ride going downhill> SNOWBOARD = \u2192\"BEAU SNORED\"\u2190 (beau=lover; snored=was loud in bed)",
+          "source": "solver"
+        },
+        {
+          "answer": "SNOWBOARD",
+          "confidence": 0.92,
+          "parse": "<ride going downhill> SNOWBOARD = \u2192SLOW BORED\u2190 (Spoonerism approximation of 'lover was loud in bed')",
+          "source": "solver"
+        }
+      ],
+      "committed": "SNOWBOARD",
+      "committed_confidence": 0.99,
+      "parse": "<ride going downhill> SNOWBOARD = \u2192\"BEAU SNORED\"\u2190 (beau=lover; snored=was loud in bed)",
+      "verified": null
+    },
+    {
+      "id": "13D",
+      "direction": "down",
+      "number": 13,
+      "clue": "Convince Google cofounder with revolutionary \"silver bullet\", perhaps (5,6)",
+      "length": 11,
+      "enumeration": [
+        5,
+        6
+      ],
+      "cells": [
+        [
+          4,
+          10
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          13,
+          10
+        ],
+        [
+          14,
+          10
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "BRING AROUND",
+          "confidence": 0.95,
+          "parse": "<Convince> BRING AROUND = BRIN (Google cofounder) + G (Google) + (A ROUND)* <revolutionary 'silver bullet, perhaps'>",
+          "source": "solver"
+        }
+      ],
+      "committed": "BRING AROUND",
+      "committed_confidence": 0.95,
+      "parse": "<Convince> BRING AROUND = BRIN (Google cofounder) + G (Google) + (A ROUND)* <revolutionary 'silver bullet, perhaps'>",
+      "verified": null
+    },
+    {
+      "id": "14A",
+      "direction": "across",
+      "number": 14,
+      "clue": "Picture that is appended to second volume (5)",
+      "length": 5,
+      "enumeration": [
+        5
+      ],
+      "cells": [
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "MOVIE",
+          "confidence": 0.95,
+          "parse": "<picture> MOVIE = MO (second/moment) + V (volume) + IE (that is)",
+          "source": "solver"
+        }
+      ],
+      "committed": "MOVIE",
+      "committed_confidence": 0.95,
+      "parse": "<picture> MOVIE = MO (second/moment) + V (volume) + IE (that is)",
+      "verified": null
+    },
+    {
+      "id": "15D",
+      "direction": "down",
+      "number": 15,
+      "clue": "Matin\u00e9e idol from Depression not in broadcast (9)",
+      "length": 9,
+      "enumeration": [
+        9
+      ],
+      "cells": [
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          14,
+          2
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "VALENTINO",
+          "confidence": 0.92,
+          "parse": "<matin\u00e9e idol> VALENTINO = VALE (depression) + (NOT IN)* (broadcast = anag)",
+          "source": "solver"
+        }
+      ],
+      "committed": "VALENTINO",
+      "committed_confidence": 0.92,
+      "parse": "<matin\u00e9e idol> VALENTINO = VALE (depression) + (NOT IN)* (broadcast = anag)",
+      "verified": null
+    },
+    {
+      "id": "16A",
+      "direction": "across",
+      "number": 16,
+      "clue": "Volunteer adopting traditional dress that's not quite right (3-6)",
+      "length": 9,
+      "enumeration": [
+        3,
+        6
+      ],
+      "cells": [
+        [
+          6,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          6,
+          13
+        ],
+        [
+          6,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "OFF-KILTER",
+          "confidence": 0.97,
+          "parse": "<that's not quite right> OFF-KILTER = OFFER (volunteer) outside KILT (traditional dress) <adopting>",
+          "source": "solver"
+        }
+      ],
+      "committed": "OFF-KILTER",
+      "committed_confidence": 0.97,
+      "parse": "<that's not quite right> OFF-KILTER = OFFER (volunteer) outside KILT (traditional dress) <adopting>",
+      "verified": null
+    },
+    {
+      "id": "17D",
+      "direction": "down",
+      "number": 17,
+      "clue": "Swimming event runs from Lebanese port after left/right mix-up (9)",
+      "length": 9,
+      "enumeration": [
+        9
+      ],
+      "cells": [
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          10,
+          8
+        ],
+        [
+          11,
+          8
+        ],
+        [
+          12,
+          8
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          14,
+          8
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "FREESTYLE",
+          "confidence": 0.99,
+          "parse": "<swimming event> FREESTYLE = FLEES <runs> TYRE <Lebanese port>, L\u2194R <left/right mix-up>",
+          "source": "solver"
+        },
+        {
+          "answer": "FREESTYLE",
+          "confidence": 0.95,
+          "parse": "<swimming event> FREESTYLE = FREES (runs) + TYLE (TYRE Lebanese port, L\u2194R mix-up)",
+          "source": "solver"
+        }
+      ],
+      "committed": "FREESTYLE",
+      "committed_confidence": 0.99,
+      "parse": "<swimming event> FREESTYLE = FLEES <runs> TYRE <Lebanese port>, L\u2194R <left/right mix-up>",
+      "verified": null
+    },
+    {
+      "id": "18A",
+      "direction": "across",
+      "number": 18,
+      "clue": "A letter P's incorrectly signifying potassium compound (9)",
+      "length": 9,
+      "enumeration": [
+        9
+      ],
+      "cells": [
+        [
+          8,
+          0
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          8,
+          8
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "SALTPETRE",
+          "confidence": 0.98,
+          "parse": "<potassium compound> SALTPETRE = (A LETTER P S)*",
+          "source": "solver"
+        }
+      ],
+      "committed": "SALTPETRE",
+      "committed_confidence": 0.98,
+      "parse": "<potassium compound> SALTPETRE = (A LETTER P S)*",
+      "verified": null
+    },
+    {
+      "id": "18D",
+      "direction": "down",
+      "number": 18,
+      "clue": "Win that kind of board game after losing hard twice (7)",
+      "length": 7,
+      "enumeration": [
+        7
+      ],
+      "cells": [
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          0
+        ],
+        [
+          11,
+          0
+        ],
+        [
+          12,
+          0
+        ],
+        [
+          13,
+          0
+        ],
+        [
+          14,
+          0
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "SUCCESS",
+          "confidence": 0.97,
+          "parse": "<Win> SUCCESS = SUCH (that kind) + CHESS (board game) - HH (hard, twice)",
+          "source": "solver"
+        }
+      ],
+      "committed": "SUCCESS",
+      "committed_confidence": 0.97,
+      "parse": "<Win> SUCCESS = SUCH (that kind) + CHESS (board game) - HH (hard, twice)",
+      "verified": null
+    },
+    {
+      "id": "19A",
+      "direction": "across",
+      "number": 19,
+      "clue": "Bit of maths going over height and circumference (5)",
+      "length": 5,
+      "enumeration": [
+        5
+      ],
+      "cells": [
+        [
+          8,
+          10
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          8,
+          12
+        ],
+        [
+          8,
+          13
+        ],
+        [
+          8,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "GIRTH",
+          "confidence": 0.99,
+          "parse": "<circumference> GIRTH = \u2190TRIG\u2190 <going over> + H <height>",
+          "source": "solver"
+        },
+        {
+          "answer": "GIRTH",
+          "confidence": 0.85,
+          "parse": "<circumference> GIRTH = (RIGHT)* <going over>",
+          "source": "solver"
+        }
+      ],
+      "committed": "GIRTH",
+      "committed_confidence": 0.99,
+      "parse": "<circumference> GIRTH = \u2190TRIG\u2190 <going over> + H <height>",
+      "verified": null
+    },
+    {
+      "id": "20D",
+      "direction": "down",
+      "number": 20,
+      "clue": "That man angers leader of suffragists\u2014she has it coming (7)",
+      "length": 7,
+      "enumeration": [
+        7
+      ],
+      "cells": [
+        [
+          8,
+          14
+        ],
+        [
+          9,
+          14
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "HEIRESS",
+          "confidence": 0.95,
+          "parse": "<she has it coming> HEIRESS = HE (that man) + IRES (angers) + S (leader of Suffragists)",
+          "source": "solver"
+        },
+        {
+          "answer": "HEIRESS",
+          "confidence": 0.95,
+          "parse": "see prior commit",
+          "source": "noop"
+        }
+      ],
+      "committed": "HEIRESS",
+      "committed_confidence": 0.95,
+      "parse": "see prior commit",
+      "verified": null
+    },
+    {
+      "id": "21A",
+      "direction": "across",
+      "number": 21,
+      "clue": "Perhaps Toronto team are able to spot one answer (9)",
+      "length": 9,
+      "enumeration": [
+        9
+      ],
+      "cells": [
+        [
+          10,
+          0
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          10,
+          2
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          4
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          10,
+          6
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          10,
+          8
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "CANADIANS",
+          "confidence": 0.93,
+          "parse": "<Toronto team, perhaps> CANADIANS = CAN (are able to) + AD (spot) + I (one) + ANS (answer)",
+          "source": "solver"
+        }
+      ],
+      "committed": "CANADIANS",
+      "committed_confidence": 0.93,
+      "parse": "<Toronto team, perhaps> CANADIANS = CAN (are able to) + AD (spot) + I (one) + ANS (answer)",
+      "verified": null
+    },
+    {
+      "id": "22D",
+      "direction": "down",
+      "number": 22,
+      "clue": "Returned to sign agreement and District Attorney's supplement (3-2)",
+      "length": 5,
+      "enumeration": [
+        3,
+        2
+      ],
+      "cells": [
+        [
+          10,
+          6
+        ],
+        [
+          11,
+          6
+        ],
+        [
+          12,
+          6
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          14,
+          6
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "ADD-ON",
+          "confidence": 0.95,
+          "parse": "<supplement> ADD-ON = \u2190NOD (sign agreement) + DA (District Attorney's)\u2190 (Returned)",
+          "source": "solver"
+        }
+      ],
+      "committed": "ADD-ON",
+      "committed_confidence": 0.95,
+      "parse": "<supplement> ADD-ON = \u2190NOD (sign agreement) + DA (District Attorney's)\u2190 (Returned)",
+      "verified": null
+    },
+    {
+      "id": "23A",
+      "direction": "across",
+      "number": 23,
+      "clue": "Starter of savoury flatbread wraps and Swiss-style fried potato (5)",
+      "length": 5,
+      "enumeration": [
+        5
+      ],
+      "cells": [
+        [
+          10,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "ROSTI",
+          "confidence": 0.95,
+          "parse": "<Swiss-style fried potato> ROSTI = ROTI outside S (starter of Savoury)",
+          "source": "solver"
+        }
+      ],
+      "committed": "ROSTI",
+      "committed_confidence": 0.95,
+      "parse": "<Swiss-style fried potato> ROSTI = ROTI outside S (starter of Savoury)",
+      "verified": null
+    },
+    {
+      "id": "24D",
+      "direction": "down",
+      "number": 24,
+      "clue": "Jilt fianc\u00e9e, essentially following incentive (5)",
+      "length": 5,
+      "enumeration": [
+        5
+      ],
+      "cells": [
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          12
+        ],
+        [
+          14,
+          12
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "SPURN",
+          "confidence": 0.95,
+          "parse": "<Jilt> SPURN = SPUR (incentive) + _N_ (essentially of fianc_e_e middle = N) <following>",
+          "source": "solver"
+        }
+      ],
+      "committed": "SPURN",
+      "committed_confidence": 0.95,
+      "parse": "<Jilt> SPURN = SPUR (incentive) + _N_ (essentially of fianc_e_e middle = N) <following>",
+      "verified": null
+    },
+    {
+      "id": "25A",
+      "direction": "across",
+      "number": 25,
+      "clue": "Were split screens central part of episode? (7)",
+      "length": 7,
+      "enumeration": [
+        7
+      ],
+      "cells": [
+        [
+          12,
+          0
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          12,
+          3
+        ],
+        [
+          12,
+          4
+        ],
+        [
+          12,
+          5
+        ],
+        [
+          12,
+          6
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "EXISTED",
+          "confidence": 0.99,
+          "parse": "<Were> EXISTED = EXITED <split> outside S <central part of epi(S)ode> <screens>",
+          "source": "solver"
+        },
+        {
+          "answer": "EXISTED",
+          "confidence": 0.85,
+          "parse": "<Were> EXISTED = EX (split) + IS (was) + T + ED (?)",
+          "source": "solver"
+        }
+      ],
+      "committed": "EXISTED",
+      "committed_confidence": 0.99,
+      "parse": "<Were> EXISTED = EXITED <split> outside S <central part of epi(S)ode> <screens>",
+      "verified": null
+    },
+    {
+      "id": "26D",
+      "direction": "down",
+      "number": 26,
+      "clue": "Hamburger's good, on reflection, for Yank (3)",
+      "length": 3,
+      "enumeration": [
+        3
+      ],
+      "cells": [
+        [
+          12,
+          4
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          14,
+          4
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "TUG",
+          "confidence": 0.95,
+          "parse": "<Yank> TUG = \u2190\ud83c\udde9\ud83c\uddeaGUT\ud83c\udde9\ud83c\uddea\u2190 (German for 'good', reversed)",
+          "source": "solver"
+        }
+      ],
+      "committed": "TUG",
+      "committed_confidence": 0.95,
+      "parse": "<Yank> TUG = \u2190\ud83c\udde9\ud83c\uddeaGUT\ud83c\udde9\ud83c\uddea\u2190 (German for 'good', reversed)",
+      "verified": null
+    },
+    {
+      "id": "27A",
+      "direction": "across",
+      "number": 27,
+      "clue": "After collapse, buy out electronic tech company (7)",
+      "length": 7,
+      "enumeration": [
+        7
+      ],
+      "cells": [
+        [
+          12,
+          8
+        ],
+        [
+          12,
+          9
+        ],
+        [
+          12,
+          10
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "YOUTUBE",
+          "confidence": 0.97,
+          "parse": "<tech company> YOUTUBE = (BUY OUT)* <collapse> + E <electronic>",
+          "source": "solver"
+        }
+      ],
+      "committed": "YOUTUBE",
+      "committed_confidence": 0.97,
+      "parse": "<tech company> YOUTUBE = (BUY OUT)* <collapse> + E <electronic>",
+      "verified": null
+    },
+    {
+      "id": "28A",
+      "direction": "across",
+      "number": 28,
+      "clue": "Unions that are forced to raise issue legitimately? (7,8)",
+      "length": 15,
+      "enumeration": [
+        7,
+        8
+      ],
+      "cells": [
+        [
+          14,
+          0
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          14,
+          2
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          14,
+          4
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          14,
+          6
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          14,
+          11
+        ],
+        [
+          14,
+          12
+        ],
+        [
+          14,
+          13
+        ],
+        [
+          14,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "SHOTGUN WEDDINGS",
+          "confidence": 0.95,
+          "parse": "<&cd> SHOTGUN WEDDINGS {unions that are forced to make issue legitimate}",
+          "source": "solver"
+        }
+      ],
+      "committed": "SHOTGUN WEDDINGS",
+      "committed_confidence": 0.95,
+      "parse": "<&cd> SHOTGUN WEDDINGS {unions that are forced to make issue legitimate}",
+      "verified": null
+    }
+  ]
+}

@@ -3,7 +3,8 @@
     "allow": [
       "WebSearch",
       "WebFetch(domain:en.wikipedia.org)",
-      "WebFetch(domain:www.gutenberg.org)"
+      "WebFetch(domain:www.gutenberg.org)",
+      "Bash(mkdir -p \"C:/Users/awsla/Documents/GitHub/Crosswords/Crossword Solver - Claude/puzzles\")"
     ]
   }
 }
