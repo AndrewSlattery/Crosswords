@@ -6,11 +6,10 @@
       "id": "1A",
       "direction": "across",
       "number": 1,
-      "clue": "Would rozzers (PCs) suspect all this? (9,6)",
-      "length": 15,
+      "clue": "Hard-fighting pros were conserving zero hp (10)",
+      "length": 10,
       "enumeration": [
-        9,
-        6
+        10
       ],
       "cells": [
         [
@@ -52,217 +51,122 @@
         [
           0,
           9
-        ],
-        [
-          0,
-          10
-        ],
-        [
-          0,
-          11
-        ],
-        [
-          0,
-          12
-        ],
-        [
-          0,
-          13
-        ],
-        [
-          0,
-          14
         ]
       ],
       "candidates": [
         {
-          "answer": "CROSSWORD PUZZLE",
-          "confidence": 0.99,
-          "parse": "<all this> CROSSWORD PUZZLE = (WOULD ROZZERS PCS)* <suspect>",
-          "source": "solver"
-        },
-        {
-          "answer": "CROSSWORD PUZZLE",
+          "answer": "HORSEPOWER",
           "confidence": 0.95,
-          "parse": "<&cd> CROSSWORD PUZZLE {all this = the puzzle itself; rozzers/PCs (police) might suspect a coded message in it}",
+          "parse": "<hp> HORSEPOWER = H + ((PROSWERE)* outside O)",
           "source": "solver"
         }
       ],
-      "committed": "CROSSWORD PUZZLE",
-      "committed_confidence": 0.99,
-      "parse": "<all this> CROSSWORD PUZZLE = (WOULD ROZZERS PCS)* <suspect>",
-      "verified": null
-    },
-    {
-      "id": "1D",
-      "direction": "down",
-      "number": 1,
-      "clue": "Silent about one going after rogue element (7)",
-      "length": 7,
-      "enumeration": [
-        7
-      ],
-      "cells": [
-        [
-          0,
-          0
-        ],
-        [
-          1,
-          0
-        ],
-        [
-          2,
-          0
-        ],
-        [
-          3,
-          0
-        ],
-        [
-          4,
-          0
-        ],
-        [
-          5,
-          0
-        ],
-        [
-          6,
-          0
-        ]
-      ],
-      "candidates": [
-        {
-          "answer": "CADMIUM",
-          "confidence": 0.95,
-          "parse": "<element> CADMIUM = CAD (rogue) + MUM (silent) outside I (one) <after rogue>",
-          "source": "solver"
-        }
-      ],
-      "committed": "CADMIUM",
+      "committed": "HORSEPOWER",
       "committed_confidence": 0.95,
-      "parse": "<element> CADMIUM = CAD (rogue) + MUM (silent) outside I (one) <after rogue>",
+      "parse": "<hp> HORSEPOWER = H + ((PROSWERE)* outside O)",
       "verified": null
     },
     {
       "id": "2D",
       "direction": "down",
       "number": 2,
-      "clue": "Start to regain consciousness, despite anaesthesiologist's conclusions (5)",
-      "length": 5,
+      "clue": "Swedish inventor defaced one Saskatchewan monument (7)",
+      "length": 7,
       "enumeration": [
-        5
+        7
       ],
       "cells": [
         [
           0,
-          2
+          1
         ],
         [
           1,
-          2
+          1
         ],
         [
           2,
-          2
+          1
         ],
         [
           3,
-          2
+          1
         ],
         [
           4,
-          2
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
         ]
       ],
       "candidates": [
         {
-          "answer": "ONSET",
-          "confidence": 0.97,
-          "parse": "<Start> ONSET = t_O regai_N consciousnes_S despit_E anaesthesiologis_T (conclusions)",
+          "answer": "OBELISK",
+          "confidence": 0.95,
+          "parse": "<monument> OBELISK = [-N]OBEL + I + SK",
           "source": "solver"
         }
       ],
-      "committed": "ONSET",
-      "committed_confidence": 0.97,
-      "parse": "<Start> ONSET = t_O regai_N consciousnes_S despit_E anaesthesiologis_T (conclusions)",
+      "committed": "OBELISK",
+      "committed_confidence": 0.95,
+      "parse": "<monument> OBELISK = [-N]OBEL + I + SK",
       "verified": null
     },
     {
       "id": "3D",
       "direction": "down",
       "number": 3,
-      "clue": "Jacket accessory ought to drape differently (8,3)",
-      "length": 11,
+      "clue": "Single verb interrupts work on crossword? (5)",
+      "length": 5,
       "enumeration": [
-        8,
-        3
+        5
       ],
       "cells": [
         [
           0,
-          4
+          3
         ],
         [
           1,
-          4
+          3
         ],
         [
           2,
-          4
+          3
         ],
         [
           3,
-          4
+          3
         ],
         [
           4,
-          4
-        ],
-        [
-          5,
-          4
-        ],
-        [
-          6,
-          4
-        ],
-        [
-          7,
-          4
-        ],
-        [
-          8,
-          4
-        ],
-        [
-          9,
-          4
-        ],
-        [
-          10,
-          4
+          3
         ]
       ],
       "candidates": [
         {
-          "answer": "SHOULDER PAD",
+          "answer": "SOLVE",
           "confidence": 0.95,
-          "parse": "<jacket accessory> SHOULDER PAD = SHOULDER (ought to bear) + PAD (drape differently?)",
+          "parse": "<work on crossword> SOLVE = SOLE outside V",
           "source": "solver"
         }
       ],
-      "committed": "SHOULDER PAD",
+      "committed": "SOLVE",
       "committed_confidence": 0.95,
-      "parse": "<jacket accessory> SHOULDER PAD = SHOULDER (ought to bear) + PAD (drape differently?)",
+      "parse": "<work on crossword> SOLVE = SOLE outside V",
       "verified": null
     },
     {
       "id": "4D",
       "direction": "down",
       "number": 4,
-      "clue": "Deliveries by comedian go too far (9)",
+      "clue": "Criticise those clothes\u2014celebrity's latest skintight garment (9)",
       "length": 9,
       "enumeration": [
         9
@@ -270,157 +174,227 @@
       "cells": [
         [
           0,
-          6
+          5
         ],
         [
           1,
-          6
+          5
         ],
         [
           2,
-          6
+          5
         ],
         [
           3,
-          6
+          5
         ],
         [
           4,
-          6
+          5
         ],
         [
           5,
-          6
+          5
         ],
         [
           6,
-          6
+          5
         ],
         [
           7,
-          6
+          5
         ],
         [
           8,
-          6
+          5
         ]
       ],
       "candidates": [
         {
-          "answer": "OVERSHOOT",
-          "confidence": 0.97,
-          "parse": "<go too far> OVERSHOOT = OVERS (deliveries, cricket) + HOOT (comedian, 'a hoot')",
-          "source": "solver"
-        },
-        {
-          "answer": "OVERREACT",
-          "confidence": 0.92,
-          "parse": "<go too far> OVERREACT = OVER (deliveries, in cricket) + RE (by) + ACT (comedian)",
+          "answer": "PANTYHOSE",
+          "confidence": 0.95,
+          "parse": "<skintight garment> PANTYHOSE = PAN + (THOSE+Y)*",
           "source": "solver"
         }
       ],
-      "committed": "OVERSHOOT",
-      "committed_confidence": 0.97,
-      "parse": "<go too far> OVERSHOOT = OVERS (deliveries, cricket) + HOOT (comedian, 'a hoot')",
+      "committed": "PANTYHOSE",
+      "committed_confidence": 0.95,
+      "parse": "<skintight garment> PANTYHOSE = PAN + (THOSE+Y)*",
       "verified": null
     },
     {
       "id": "5D",
       "direction": "down",
       "number": 5,
-      "clue": "Group of Chicago CSI detectives going over nightclub (5)",
-      "length": 5,
+      "clue": "Whiskey in a canteen ultimately quaffed by corps of Army brats (15)",
+      "length": 15,
       "enumeration": [
-        5
+        15
       ],
       "cells": [
         [
           0,
-          8
+          7
         ],
         [
           1,
-          8
+          7
         ],
         [
           2,
-          8
+          7
         ],
         [
           3,
-          8
+          7
         ],
         [
           4,
-          8
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          7
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          7
+        ],
+        [
+          12,
+          7
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          14,
+          7
         ]
       ],
       "candidates": [
         {
-          "answer": "DISCO",
-          "confidence": 0.99,
-          "parse": "<nightclub> DISCO = \u2190(.chica.g)OCSID(e.tectives)\u2190 <going over, reverse hidden in 'chicago CSI detectives'>",
-          "source": "solver"
-        },
-        {
-          "answer": "DISCO",
-          "confidence": 0.8,
-          "parse": "<nightclub> DISCO = D + \u2190CSI\u2190 (going over) + O",
+          "answer": "WHIPPERSNAPPERS",
+          "confidence": 0.85,
+          "parse": "<Army brats> WHIPPERSNAPPERS",
           "source": "solver"
         }
       ],
-      "committed": "DISCO",
-      "committed_confidence": 0.99,
-      "parse": "<nightclub> DISCO = \u2190(.chica.g)OCSID(e.tectives)\u2190 <going over, reverse hidden in 'chicago CSI detectives'>",
+      "committed": "WHIPPERSNAPPERS",
+      "committed_confidence": 0.85,
+      "parse": "<Army brats> WHIPPERSNAPPERS",
       "verified": null
     },
     {
       "id": "6D",
       "direction": "down",
       "number": 6,
-      "clue": "Card game with queen but not jack (3)",
-      "length": 3,
+      "clue": "Mature expression of condolences by the parson, ultimately (5)",
+      "length": 5,
       "enumeration": [
-        3
+        5
       ],
       "cells": [
         [
           0,
-          10
+          9
         ],
         [
           1,
-          10
+          9
         ],
         [
           2,
-          10
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
         ]
       ],
       "candidates": [
         {
-          "answer": "UNO",
-          "confidence": 0.99,
-          "parse": "<card game> UNO = JUNO <queen, Roman goddess> - J <jack>",
-          "source": "solver"
-        },
-        {
-          "answer": "UNO",
+          "answer": "RIPEN",
           "confidence": 0.85,
-          "parse": "<card game> UNO {Spanish for 'one' / has QUEEN-letter coverage but no J of jack}",
+          "parse": "<Mature> RIPEN = RIP + (PEN ultimately)",
           "source": "solver"
         }
       ],
-      "committed": "UNO",
-      "committed_confidence": 0.99,
-      "parse": "<card game> UNO = JUNO <queen, Roman goddess> - J <jack>",
-      "verified": true
+      "committed": "RIPEN",
+      "committed_confidence": 0.85,
+      "parse": "<Mature> RIPEN = RIP + (PEN ultimately)",
+      "verified": null
+    },
+    {
+      "id": "7A",
+      "direction": "across",
+      "number": 7,
+      "clue": "Advertise large dog houses (4)",
+      "length": 4,
+      "enumeration": [
+        4
+      ],
+      "cells": [
+        [
+          0,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          0,
+          13
+        ],
+        [
+          0,
+          14
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "PLUG",
+          "confidence": 0.95,
+          "parse": "<advertise> PLUG = PUG outside L",
+          "source": "solver"
+        }
+      ],
+      "committed": "PLUG",
+      "committed_confidence": 0.95,
+      "parse": "<advertise> PLUG = PUG outside L",
+      "verified": null
     },
     {
       "id": "7D",
       "direction": "down",
       "number": 7,
-      "clue": "Prophet from Australia upset at critic? (9)",
+      "clue": "Bobby cut back on animated cinema (9)",
       "length": 9,
       "enumeration": [
         9
@@ -428,115 +402,114 @@
       "cells": [
         [
           0,
-          12
+          11
         ],
         [
           1,
-          12
+          11
         ],
         [
           2,
-          12
+          11
         ],
         [
           3,
-          12
+          11
         ],
         [
           4,
-          12
+          11
         ],
         [
           5,
-          12
+          11
         ],
         [
           6,
-          12
+          11
         ],
         [
           7,
-          12
+          11
         ],
         [
           8,
-          12
+          11
         ]
       ],
       "candidates": [
         {
-          "answer": "ZOROASTER",
+          "answer": "POLICEMAN",
           "confidence": 0.95,
-          "parse": "<prophet> ZOROASTER = \u2190OZ\u2190 (Australia upset) + ROASTER (critic)",
+          "parse": "<Bobby> POLICEMAN = LOP<- + (CINEMA)*",
           "source": "solver"
         }
       ],
-      "committed": "ZOROASTER",
+      "committed": "POLICEMAN",
       "committed_confidence": 0.95,
-      "parse": "<prophet> ZOROASTER = \u2190OZ\u2190 (Australia upset) + ROASTER (critic)",
+      "parse": "<Bobby> POLICEMAN = LOP<- + (CINEMA)*",
       "verified": null
     },
     {
       "id": "8D",
       "direction": "down",
       "number": 8,
-      "clue": "Words displayed here preceding a German article (1-6)",
+      "clue": "Y-fronts from upmarket pants store back in fashion (7)",
       "length": 7,
       "enumeration": [
-        1,
-        6
+        7
       ],
       "cells": [
         [
           0,
-          14
+          13
         ],
         [
           1,
-          14
+          13
         ],
         [
           2,
-          14
+          13
         ],
         [
           3,
-          14
+          13
         ],
         [
           4,
-          14
+          13
         ],
         [
           5,
-          14
+          13
         ],
         [
           6,
-          14
+          13
         ]
       ],
       "candidates": [
         {
-          "answer": "E-READER",
-          "confidence": 0.85,
-          "parse": "<words displayed here> E-READER = E + REA + DER (German article at end)",
+          "answer": "UPSILON",
+          "confidence": 0.9,
+          "parse": "<Y-fronts/Greek Y> UPSILON",
           "source": "solver"
         }
       ],
-      "committed": "E-READER",
-      "committed_confidence": 0.85,
-      "parse": "<words displayed here> E-READER = E + REA + DER (German article at end)",
+      "committed": "UPSILON",
+      "committed_confidence": 0.9,
+      "parse": "<Y-fronts/Greek Y> UPSILON",
       "verified": null
     },
     {
       "id": "9A",
       "direction": "across",
       "number": 9,
-      "clue": "Bride so excited to take off clothes (7)",
-      "length": 7,
+      "clue": "Broadcast authentic section of film (4)",
+      "length": 4,
       "enumeration": [
-        7
+        4
       ],
       "cells": [
         [
@@ -554,43 +527,44 @@
         [
           2,
           3
-        ],
-        [
-          2,
-          4
-        ],
-        [
-          2,
-          5
-        ],
-        [
-          2,
-          6
         ]
       ],
       "candidates": [
         {
-          "answer": "DISROBE",
-          "confidence": 0.98,
-          "parse": "(BRIDE SO)* <to take off clothes>",
+          "answer": "REEL",
+          "confidence": 0.95,
+          "parse": "<section of film> REEL = \" REAL\\",
           "source": "solver"
         }
       ],
-      "committed": "DISROBE",
-      "committed_confidence": 0.98,
-      "parse": "(BRIDE SO)* <to take off clothes>",
+      "committed": "REEL",
+      "committed_confidence": 0.95,
+      "parse": "<section of film> REEL = \" REAL\\",
       "verified": null
     },
     {
       "id": "10A",
       "direction": "across",
       "number": 10,
-      "clue": "Search outside of Google for cause of affliction (7)",
-      "length": 7,
+      "clue": "Love to install a language for digital application (4,6)",
+      "length": 10,
       "enumeration": [
-        7
+        4,
+        6
       ],
       "cells": [
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          2,
+          7
+        ],
         [
           2,
           8
@@ -622,25 +596,25 @@
       ],
       "candidates": [
         {
-          "answer": "SCOURGE",
-          "confidence": 0.98,
-          "parse": "<cause of affliction> SCOURGE = SCOUR + GE (outside of \"GooglE\")",
+          "answer": "NAILPOLISH",
+          "confidence": 0.95,
+          "parse": "<digital application> NAIL POLISH = NIL outside A + POLISH",
           "source": "solver"
         }
       ],
-      "committed": "SCOURGE",
-      "committed_confidence": 0.98,
-      "parse": "<cause of affliction> SCOURGE = SCOUR + GE (outside of \"GooglE\")",
+      "committed": "NAILPOLISH",
+      "committed_confidence": 0.95,
+      "parse": "<digital application> NAIL POLISH = NIL outside A + POLISH",
       "verified": null
     },
     {
       "id": "11A",
       "direction": "across",
       "number": 11,
-      "clue": "Acquired secrets via home telephone (5)",
-      "length": 5,
+      "clue": "Uniform, as it happens, verges on racy (6)",
+      "length": 6,
       "enumeration": [
-        5
+        6
       ],
       "cells": [
         [
@@ -662,35 +636,35 @@
         [
           4,
           4
+        ],
+        [
+          4,
+          5
         ]
       ],
       "candidates": [
         {
-          "answer": "INTEL",
+          "answer": "LIVERY",
           "confidence": 0.95,
-          "parse": "<acquired secrets> INTEL = IN (home) + TEL (telephone)",
+          "parse": "<uniform> LIVERY = LIVE + RY",
           "source": "solver"
         }
       ],
-      "committed": "INTEL",
+      "committed": "LIVERY",
       "committed_confidence": 0.95,
-      "parse": "<acquired secrets> INTEL = IN (home) + TEL (telephone)",
+      "parse": "<uniform> LIVERY = LIVE + RY",
       "verified": null
     },
     {
       "id": "12A",
       "direction": "across",
       "number": 12,
-      "clue": "Ride going downhill as Spooner's lover was loud in bed? (9)",
-      "length": 9,
+      "clue": "Scot's exclamation at loss during long card game (8)",
+      "length": 8,
       "enumeration": [
-        9
+        8
       ],
       "cells": [
-        [
-          4,
-          6
-        ],
         [
           4,
           7
@@ -726,100 +700,25 @@
       ],
       "candidates": [
         {
-          "answer": "SNOWBOARD",
-          "confidence": 0.99,
-          "parse": "<ride going downhill> SNOWBOARD = \u2192\"BEAU SNORED\"\u2190 (beau=lover; snored=was loud in bed)",
-          "source": "solver"
-        },
-        {
-          "answer": "SNOWBOARD",
-          "confidence": 0.92,
-          "parse": "<ride going downhill> SNOWBOARD = \u2192SLOW BORED\u2190 (Spoonerism approximation of 'lover was loud in bed')",
-          "source": "solver"
-        }
-      ],
-      "committed": "SNOWBOARD",
-      "committed_confidence": 0.99,
-      "parse": "<ride going downhill> SNOWBOARD = \u2192\"BEAU SNORED\"\u2190 (beau=lover; snored=was loud in bed)",
-      "verified": null
-    },
-    {
-      "id": "13D",
-      "direction": "down",
-      "number": 13,
-      "clue": "Convince Google cofounder with revolutionary \"silver bullet\", perhaps (5,6)",
-      "length": 11,
-      "enumeration": [
-        5,
-        6
-      ],
-      "cells": [
-        [
-          4,
-          10
-        ],
-        [
-          5,
-          10
-        ],
-        [
-          6,
-          10
-        ],
-        [
-          7,
-          10
-        ],
-        [
-          8,
-          10
-        ],
-        [
-          9,
-          10
-        ],
-        [
-          10,
-          10
-        ],
-        [
-          11,
-          10
-        ],
-        [
-          12,
-          10
-        ],
-        [
-          13,
-          10
-        ],
-        [
-          14,
-          10
-        ]
-      ],
-      "candidates": [
-        {
-          "answer": "BRING AROUND",
+          "answer": "PINOCHLE",
           "confidence": 0.95,
-          "parse": "<Convince> BRING AROUND = BRIN (Google cofounder) + G (Google) + (A ROUND)* <revolutionary 'silver bullet, perhaps'>",
+          "parse": "<card game> PINOCHLE = PINE outside (OCH + L)",
           "source": "solver"
         }
       ],
-      "committed": "BRING AROUND",
+      "committed": "PINOCHLE",
       "committed_confidence": 0.95,
-      "parse": "<Convince> BRING AROUND = BRIN (Google cofounder) + G (Google) + (A ROUND)* <revolutionary 'silver bullet, perhaps'>",
+      "parse": "<card game> PINOCHLE = PINE outside (OCH + L)",
       "verified": null
     },
     {
-      "id": "14A",
+      "id": "13A",
       "direction": "across",
-      "number": 14,
-      "clue": "Picture that is appended to second volume (5)",
-      "length": 5,
+      "number": 13,
+      "clue": "Slide over middle of floes in snowmobile (6)",
+      "length": 6,
       "enumeration": [
-        5
+        6
       ],
       "cells": [
         [
@@ -841,26 +740,30 @@
         [
           6,
           4
+        ],
+        [
+          6,
+          5
         ]
       ],
       "candidates": [
         {
-          "answer": "MOVIE",
+          "answer": "SKIDOO",
           "confidence": 0.95,
-          "parse": "<picture> MOVIE = MO (second/moment) + V (volume) + IE (that is)",
+          "parse": "<snowmobile> SKIDOO = SKID + O + O",
           "source": "solver"
         }
       ],
-      "committed": "MOVIE",
+      "committed": "SKIDOO",
       "committed_confidence": 0.95,
-      "parse": "<picture> MOVIE = MO (second/moment) + V (volume) + IE (that is)",
+      "parse": "<snowmobile> SKIDOO = SKID + O + O",
       "verified": null
     },
     {
-      "id": "15D",
+      "id": "14D",
       "direction": "down",
-      "number": 15,
-      "clue": "Matin\u00e9e idol from Depression not in broadcast (9)",
+      "number": 14,
+      "clue": "Clothed an eccentric for event (9)",
       "length": 9,
       "enumeration": [
         9
@@ -868,69 +771,64 @@
       "cells": [
         [
           6,
-          2
+          3
         ],
         [
           7,
-          2
+          3
         ],
         [
           8,
-          2
+          3
         ],
         [
           9,
-          2
+          3
         ],
         [
           10,
-          2
+          3
         ],
         [
           11,
-          2
+          3
         ],
         [
           12,
-          2
+          3
         ],
         [
           13,
-          2
+          3
         ],
         [
           14,
-          2
+          3
         ]
       ],
       "candidates": [
         {
-          "answer": "VALENTINO",
-          "confidence": 0.92,
-          "parse": "<matin\u00e9e idol> VALENTINO = VALE (depression) + (NOT IN)* (broadcast = anag)",
+          "answer": "DECATHLON",
+          "confidence": 0.95,
+          "parse": "<event> DECATHLON = (CLOTHED AN)*",
           "source": "solver"
         }
       ],
-      "committed": "VALENTINO",
-      "committed_confidence": 0.92,
-      "parse": "<matin\u00e9e idol> VALENTINO = VALE (depression) + (NOT IN)* (broadcast = anag)",
+      "committed": "DECATHLON",
+      "committed_confidence": 0.95,
+      "parse": "<event> DECATHLON = (CLOTHED AN)*",
       "verified": null
     },
     {
-      "id": "16A",
+      "id": "15A",
       "direction": "across",
-      "number": 16,
-      "clue": "Volunteer adopting traditional dress that's not quite right (3-6)",
-      "length": 9,
+      "number": 15,
+      "clue": "Supplying more weapons to raise against Chinese dynasty (8)",
+      "length": 8,
       "enumeration": [
-        3,
-        6
+        8
       ],
       "cells": [
-        [
-          6,
-          6
-        ],
         [
           6,
           7
@@ -966,22 +864,22 @@
       ],
       "candidates": [
         {
-          "answer": "OFF-KILTER",
-          "confidence": 0.97,
-          "parse": "<that's not quite right> OFF-KILTER = OFFER (volunteer) outside KILT (traditional dress) <adopting>",
+          "answer": "REARMING",
+          "confidence": 0.95,
+          "parse": "<supplying more weapons> REARMING = REAR + MING",
           "source": "solver"
         }
       ],
-      "committed": "OFF-KILTER",
-      "committed_confidence": 0.97,
-      "parse": "<that's not quite right> OFF-KILTER = OFFER (volunteer) outside KILT (traditional dress) <adopting>",
+      "committed": "REARMING",
+      "committed_confidence": 0.95,
+      "parse": "<supplying more weapons> REARMING = REAR + MING",
       "verified": null
     },
     {
-      "id": "17D",
+      "id": "16D",
       "direction": "down",
-      "number": 17,
-      "clue": "Swimming event runs from Lebanese port after left/right mix-up (9)",
+      "number": 16,
+      "clue": "French article to capture a revolutionary form of self-catered accommodation (9)",
       "length": 9,
       "enumeration": [
         9
@@ -989,68 +887,62 @@
       "cells": [
         [
           6,
-          8
+          9
         ],
         [
           7,
-          8
+          9
         ],
         [
           8,
-          8
+          9
         ],
         [
           9,
-          8
+          9
         ],
         [
           10,
-          8
+          9
         ],
         [
           11,
-          8
+          9
         ],
         [
           12,
-          8
+          9
         ],
         [
           13,
-          8
+          9
         ],
         [
           14,
-          8
+          9
         ]
       ],
       "candidates": [
         {
-          "answer": "FREESTYLE",
-          "confidence": 0.99,
-          "parse": "<swimming event> FREESTYLE = FLEES <runs> TYRE <Lebanese port>, L\u2194R <left/right mix-up>",
-          "source": "solver"
-        },
-        {
-          "answer": "FREESTYLE",
-          "confidence": 0.95,
-          "parse": "<swimming event> FREESTYLE = FREES (runs) + TYLE (TYRE Lebanese port, L\u2194R mix-up)",
+          "answer": "APARTOTEL",
+          "confidence": 0.9,
+          "parse": "<self-catered accommodation> APARTOTEL = (ALTERATOP)*",
           "source": "solver"
         }
       ],
-      "committed": "FREESTYLE",
-      "committed_confidence": 0.99,
-      "parse": "<swimming event> FREESTYLE = FLEES <runs> TYRE <Lebanese port>, L\u2194R <left/right mix-up>",
+      "committed": "APARTOTEL",
+      "committed_confidence": 0.9,
+      "parse": "<self-catered accommodation> APARTOTEL = (ALTERATOP)*",
       "verified": null
     },
     {
-      "id": "18A",
+      "id": "17A",
       "direction": "across",
-      "number": 18,
-      "clue": "A letter P's incorrectly signifying potassium compound (9)",
-      "length": 9,
+      "number": 17,
+      "clue": "Formal meal Uncle John organised after disinviting Jack (8)",
+      "length": 8,
       "enumeration": [
-        9
+        8
       ],
       "cells": [
         [
@@ -1084,30 +976,26 @@
         [
           8,
           7
-        ],
-        [
-          8,
-          8
         ]
       ],
       "candidates": [
         {
-          "answer": "SALTPETRE",
-          "confidence": 0.98,
-          "parse": "<potassium compound> SALTPETRE = (A LETTER P S)*",
+          "answer": "LUNCHEON",
+          "confidence": 0.95,
+          "parse": "<formal meal> LUNCHEON = (UNCLEOHN)*",
           "source": "solver"
         }
       ],
-      "committed": "SALTPETRE",
-      "committed_confidence": 0.98,
-      "parse": "<potassium compound> SALTPETRE = (A LETTER P S)*",
+      "committed": "LUNCHEON",
+      "committed_confidence": 0.95,
+      "parse": "<formal meal> LUNCHEON = (UNCLEOHN)*",
       "verified": null
     },
     {
       "id": "18D",
       "direction": "down",
       "number": 18,
-      "clue": "Win that kind of board game after losing hard twice (7)",
+      "clue": "Pseudoscience nuts fool guy (7)",
       "length": 7,
       "enumeration": [
         7
@@ -1115,56 +1003,60 @@
       "cells": [
         [
           8,
-          0
+          1
         ],
         [
           9,
-          0
+          1
         ],
         [
           10,
-          0
+          1
         ],
         [
           11,
-          0
+          1
         ],
         [
           12,
-          0
+          1
         ],
         [
           13,
-          0
+          1
         ],
         [
           14,
-          0
+          1
         ]
       ],
       "candidates": [
         {
-          "answer": "SUCCESS",
-          "confidence": 0.97,
-          "parse": "<Win> SUCCESS = SUCH (that kind) + CHESS (board game) - HH (hard, twice)",
+          "answer": "UFOLOGY",
+          "confidence": 0.95,
+          "parse": "<Pseudoscience> UFOLOGY = (FOOLGUY)*",
           "source": "solver"
         }
       ],
-      "committed": "SUCCESS",
-      "committed_confidence": 0.97,
-      "parse": "<Win> SUCCESS = SUCH (that kind) + CHESS (board game) - HH (hard, twice)",
+      "committed": "UFOLOGY",
+      "committed_confidence": 0.95,
+      "parse": "<Pseudoscience> UFOLOGY = (FOOLGUY)*",
       "verified": null
     },
     {
       "id": "19A",
       "direction": "across",
       "number": 19,
-      "clue": "Bit of maths going over height and circumference (5)",
-      "length": 5,
+      "clue": "Hero regularly expressed fame in medals (6)",
+      "length": 6,
       "enumeration": [
-        5
+        6
       ],
       "cells": [
+        [
+          8,
+          9
+        ],
         [
           8,
           10
@@ -1188,28 +1080,28 @@
       ],
       "candidates": [
         {
-          "answer": "GIRTH",
-          "confidence": 0.99,
-          "parse": "<circumference> GIRTH = \u2190TRIG\u2190 <going over> + H <height>",
+          "answer": "ANNUAL",
+          "confidence": 0.85,
+          "parse": "<medals> ANNUAL",
           "source": "solver"
         },
         {
-          "answer": "GIRTH",
-          "confidence": 0.85,
-          "parse": "<circumference> GIRTH = (RIGHT)* <going over>",
+          "answer": "HONORS",
+          "confidence": 0.75,
+          "parse": "<medals> HONORS",
           "source": "solver"
         }
       ],
-      "committed": "GIRTH",
-      "committed_confidence": 0.99,
-      "parse": "<circumference> GIRTH = \u2190TRIG\u2190 <going over> + H <height>",
+      "committed": "ANNUAL",
+      "committed_confidence": 0.85,
+      "parse": "<medals> ANNUAL",
       "verified": null
     },
     {
       "id": "20D",
       "direction": "down",
       "number": 20,
-      "clue": "That man angers leader of suffragists\u2014she has it coming (7)",
+      "clue": "Frank's cruel to reject that man (7)",
       "length": 7,
       "enumeration": [
         7
@@ -1217,60 +1109,54 @@
       "cells": [
         [
           8,
-          14
+          13
         ],
         [
           9,
-          14
+          13
         ],
         [
           10,
-          14
+          13
         ],
         [
           11,
-          14
+          13
         ],
         [
           12,
-          14
+          13
         ],
         [
           13,
-          14
+          13
         ],
         [
           14,
-          14
+          13
         ]
       ],
       "candidates": [
         {
-          "answer": "HEIRESS",
+          "answer": "ARTLESS",
           "confidence": 0.95,
-          "parse": "<she has it coming> HEIRESS = HE (that man) + IRES (angers) + S (leader of Suffragists)",
+          "parse": "<Frank> ARTLESS = HEARTLESS - HE",
           "source": "solver"
-        },
-        {
-          "answer": "HEIRESS",
-          "confidence": 0.95,
-          "parse": "see prior commit",
-          "source": "noop"
         }
       ],
-      "committed": "HEIRESS",
+      "committed": "ARTLESS",
       "committed_confidence": 0.95,
-      "parse": "see prior commit",
+      "parse": "<Frank> ARTLESS = HEARTLESS - HE",
       "verified": null
     },
     {
       "id": "21A",
       "direction": "across",
       "number": 21,
-      "clue": "Perhaps Toronto team are able to spot one answer (9)",
-      "length": 9,
+      "clue": "Pad of household animals overly loud on the counter (8)",
+      "length": 8,
       "enumeration": [
-        9
+        8
       ],
       "cells": [
         [
@@ -1304,80 +1190,79 @@
         [
           10,
           7
-        ],
-        [
-          10,
-          8
         ]
       ],
       "candidates": [
         {
-          "answer": "CANADIANS",
-          "confidence": 0.93,
-          "parse": "<Toronto team, perhaps> CANADIANS = CAN (are able to) + AD (spot) + I (one) + ANS (answer)",
+          "answer": "FOOTSTEP",
+          "confidence": 0.95,
+          "parse": "<pad> FOOTSTEP = (PETS+TOO+F)<-",
           "source": "solver"
         }
       ],
-      "committed": "CANADIANS",
-      "committed_confidence": 0.93,
-      "parse": "<Toronto team, perhaps> CANADIANS = CAN (are able to) + AD (spot) + I (one) + ANS (answer)",
+      "committed": "FOOTSTEP",
+      "committed_confidence": 0.95,
+      "parse": "<pad> FOOTSTEP = (PETS+TOO+F)<-",
       "verified": null
     },
     {
       "id": "22D",
       "direction": "down",
       "number": 22,
-      "clue": "Returned to sign agreement and District Attorney's supplement (3-2)",
+      "clue": "Car manufacturer integrates larger frames (5)",
       "length": 5,
       "enumeration": [
-        3,
-        2
+        5
       ],
       "cells": [
         [
           10,
-          6
+          5
         ],
         [
           11,
-          6
+          5
         ],
         [
           12,
-          6
+          5
         ],
         [
           13,
-          6
+          5
         ],
         [
           14,
-          6
+          5
         ]
       ],
       "candidates": [
         {
-          "answer": "ADD-ON",
+          "answer": "TESLA",
           "confidence": 0.95,
-          "parse": "<supplement> ADD-ON = \u2190NOD (sign agreement) + DA (District Attorney's)\u2190 (Returned)",
+          "parse": "<car manufacturer> TESLA = (.integra)TES LA(rger.)",
           "source": "solver"
         }
       ],
-      "committed": "ADD-ON",
+      "committed": "TESLA",
       "committed_confidence": 0.95,
-      "parse": "<supplement> ADD-ON = \u2190NOD (sign agreement) + DA (District Attorney's)\u2190 (Returned)",
+      "parse": "<car manufacturer> TESLA = (.integra)TES LA(rger.)",
       "verified": null
     },
     {
       "id": "23A",
       "direction": "across",
       "number": 23,
-      "clue": "Starter of savoury flatbread wraps and Swiss-style fried potato (5)",
-      "length": 5,
+      "clue": "When swineherd may go to get cosy (6)",
+      "length": 6,
       "enumeration": [
-        5
+        6
       ],
       "cells": [
+        [
+          10,
+          9
+        ],
         [
           10,
           10
@@ -1401,22 +1286,22 @@
       ],
       "candidates": [
         {
-          "answer": "ROSTI",
-          "confidence": 0.95,
-          "parse": "<Swiss-style fried potato> ROSTI = ROTI outside S (starter of Savoury)",
+          "answer": "TOASTY",
+          "confidence": 0.9,
+          "parse": "<to get cosy> TOASTY = TO A STY",
           "source": "solver"
         }
       ],
-      "committed": "ROSTI",
-      "committed_confidence": 0.95,
-      "parse": "<Swiss-style fried potato> ROSTI = ROTI outside S (starter of Savoury)",
+      "committed": "TOASTY",
+      "committed_confidence": 0.9,
+      "parse": "<to get cosy> TOASTY = TO A STY",
       "verified": null
     },
     {
       "id": "24D",
       "direction": "down",
       "number": 24,
-      "clue": "Jilt fianc\u00e9e, essentially following incentive (5)",
+      "clue": "Should we hear anything? (5)",
       "length": 5,
       "enumeration": [
         5
@@ -1424,46 +1309,46 @@
       "cells": [
         [
           10,
-          12
+          11
         ],
         [
           11,
-          12
+          11
         ],
         [
           12,
-          12
+          11
         ],
         [
           13,
-          12
+          11
         ],
         [
           14,
-          12
+          11
         ]
       ],
       "candidates": [
         {
-          "answer": "SPURN",
+          "answer": "AUGHT",
           "confidence": 0.95,
-          "parse": "<Jilt> SPURN = SPUR (incentive) + _N_ (essentially of fianc_e_e middle = N) <following>",
+          "parse": "<anything> AUGHT = \" OUGHT\\",
           "source": "solver"
         }
       ],
-      "committed": "SPURN",
+      "committed": "AUGHT",
       "committed_confidence": 0.95,
-      "parse": "<Jilt> SPURN = SPUR (incentive) + _N_ (essentially of fianc_e_e middle = N) <following>",
+      "parse": "<anything> AUGHT = \" OUGHT\\",
       "verified": null
     },
     {
       "id": "25A",
       "direction": "across",
       "number": 25,
-      "clue": "Were split screens central part of episode? (7)",
-      "length": 7,
+      "clue": "Combining fossil fuel energy added to effect of volatile chemical (10)",
+      "length": 10,
       "enumeration": [
-        7
+        10
       ],
       "cells": [
         [
@@ -1493,73 +1378,11 @@
         [
           12,
           6
-        ]
-      ],
-      "candidates": [
-        {
-          "answer": "EXISTED",
-          "confidence": 0.99,
-          "parse": "<Were> EXISTED = EXITED <split> outside S <central part of epi(S)ode> <screens>",
-          "source": "solver"
-        },
-        {
-          "answer": "EXISTED",
-          "confidence": 0.85,
-          "parse": "<Were> EXISTED = EX (split) + IS (was) + T + ED (?)",
-          "source": "solver"
-        }
-      ],
-      "committed": "EXISTED",
-      "committed_confidence": 0.99,
-      "parse": "<Were> EXISTED = EXITED <split> outside S <central part of epi(S)ode> <screens>",
-      "verified": null
-    },
-    {
-      "id": "26D",
-      "direction": "down",
-      "number": 26,
-      "clue": "Hamburger's good, on reflection, for Yank (3)",
-      "length": 3,
-      "enumeration": [
-        3
-      ],
-      "cells": [
+        ],
         [
           12,
-          4
+          7
         ],
-        [
-          13,
-          4
-        ],
-        [
-          14,
-          4
-        ]
-      ],
-      "candidates": [
-        {
-          "answer": "TUG",
-          "confidence": 0.95,
-          "parse": "<Yank> TUG = \u2190\ud83c\udde9\ud83c\uddeaGUT\ud83c\udde9\ud83c\uddea\u2190 (German for 'good', reversed)",
-          "source": "solver"
-        }
-      ],
-      "committed": "TUG",
-      "committed_confidence": 0.95,
-      "parse": "<Yank> TUG = \u2190\ud83c\udde9\ud83c\uddeaGUT\ud83c\udde9\ud83c\uddea\u2190 (German for 'good', reversed)",
-      "verified": null
-    },
-    {
-      "id": "27A",
-      "direction": "across",
-      "number": 27,
-      "clue": "After collapse, buy out electronic tech company (7)",
-      "length": 7,
-      "enumeration": [
-        7
-      ],
-      "cells": [
         [
           12,
           8
@@ -1567,11 +1390,31 @@
         [
           12,
           9
-        ],
-        [
-          12,
-          10
-        ],
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "COALESCENT",
+          "confidence": 0.95,
+          "parse": "<combining> COALESCENT = COAL + E + SCENT",
+          "source": "solver"
+        }
+      ],
+      "committed": "COALESCENT",
+      "committed_confidence": 0.95,
+      "parse": "<combining> COALESCENT = COAL + E + SCENT",
+      "verified": null
+    },
+    {
+      "id": "26A",
+      "direction": "across",
+      "number": 26,
+      "clue": "With bit of work, returns increased (4)",
+      "length": 4,
+      "enumeration": [
+        4
+      ],
+      "cells": [
         [
           12,
           11
@@ -1591,26 +1434,25 @@
       ],
       "candidates": [
         {
-          "answer": "YOUTUBE",
-          "confidence": 0.97,
-          "parse": "<tech company> YOUTUBE = (BUY OUT)* <collapse> + E <electronic>",
+          "answer": "GREW",
+          "confidence": 0.95,
+          "parse": "<increased> GREW = (W + ERG)<-",
           "source": "solver"
         }
       ],
-      "committed": "YOUTUBE",
-      "committed_confidence": 0.97,
-      "parse": "<tech company> YOUTUBE = (BUY OUT)* <collapse> + E <electronic>",
+      "committed": "GREW",
+      "committed_confidence": 0.95,
+      "parse": "<increased> GREW = (W + ERG)<-",
       "verified": null
     },
     {
-      "id": "28A",
+      "id": "27A",
       "direction": "across",
-      "number": 28,
-      "clue": "Unions that are forced to raise issue legitimately? (7,8)",
-      "length": 15,
+      "number": 27,
+      "clue": "Origin of least archaic word for that French city (4)",
+      "length": 4,
       "enumeration": [
-        7,
-        8
+        4
       ],
       "cells": [
         [
@@ -1628,11 +1470,31 @@
         [
           14,
           3
-        ],
-        [
-          14,
-          4
-        ],
+        ]
+      ],
+      "candidates": [
+        {
+          "answer": "LYON",
+          "confidence": 0.95,
+          "parse": "<French city> LYON = L + YON",
+          "source": "solver"
+        }
+      ],
+      "committed": "LYON",
+      "committed_confidence": 0.95,
+      "parse": "<French city> LYON = L + YON",
+      "verified": null
+    },
+    {
+      "id": "28A",
+      "direction": "across",
+      "number": 28,
+      "clue": "Despot and a bishop partner with someone pulling strings? (10)",
+      "length": 10,
+      "enumeration": [
+        10
+      ],
+      "cells": [
         [
           14,
           5
@@ -1676,15 +1538,15 @@
       ],
       "candidates": [
         {
-          "answer": "SHOTGUN WEDDINGS",
-          "confidence": 0.95,
-          "parse": "<&cd> SHOTGUN WEDDINGS {unions that are forced to make issue legitimate}",
+          "answer": "ABSOLUTIST",
+          "confidence": 0.9,
+          "parse": "<Despot> ABSOLUTIST = A + B + SO + LUTIST",
           "source": "solver"
         }
       ],
-      "committed": "SHOTGUN WEDDINGS",
-      "committed_confidence": 0.95,
-      "parse": "<&cd> SHOTGUN WEDDINGS {unions that are forced to make issue legitimate}",
+      "committed": "ABSOLUTIST",
+      "committed_confidence": 0.9,
+      "parse": "<Despot> ABSOLUTIST = A + B + SO + LUTIST",
       "verified": null
     }
   ]

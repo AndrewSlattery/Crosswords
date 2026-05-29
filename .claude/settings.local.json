@@ -4,7 +4,8 @@
       "WebSearch",
       "WebFetch(domain:en.wikipedia.org)",
       "WebFetch(domain:www.gutenberg.org)",
-      "Bash(mkdir -p \"C:/Users/awsla/Documents/GitHub/Crosswords/Crossword Solver - Claude/puzzles\")"
+      "Bash(mkdir -p \"C:/Users/awsla/Documents/GitHub/Crosswords/Crossword Solver - Claude/puzzles\")",
+      "Bash(python xw.py from-text puzzles/current.txt --init)"
     ]
   }
 }
