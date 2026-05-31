@@ -67,15 +67,29 @@ Two rules the engine enforces, which you should internalise:
 ```
 0. python xw.py from-text puzzles/<puzzle>.txt --init      # if starting from raw text
    # OR: python xw.py init puzzles/<puzzle>.json           # if you already have JSON
+0b. (SECOND terminal) python xw.py serve   # live dashboard at http://127.0.0.1:8000
+    # or just run dashboard.bat  (dashboard.bat <puzzle file> loads it first, then serves)
 1. python xw.py stats                # optional: sanity-check the load
 2. Repeat until no unsolved entries and no conflicts:
-   a. python xw.py frontier        # unsolved entries, MOST-CONSTRAINED FIRST
-   b. Dispatch the top few as PARALLEL subagents (one clue each).
-   c. Each subagent returns answer + confidence + parse; you commit them.
-   d. After each commit, read `conflicts` and `newly_constrained` from output.
-        - newly_constrained entries -> re-queue them (their pattern shrank).
+   a. python xw.py frontier --candidates   # unsolved, MOST-CONSTRAINED FIRST,
+                                            # each with a deterministic wordlist verdict
+   b. CANDIDATE GATE — branch on each clue's verdict BEFORE spending a model:
+        unique -> dispatch a CHEAP subagent only to CONFIRM that one word's wordplay
+        few    -> dispatch a solver WITH the candidate list as hints
+        none   -> no listed word fits: a crossing letter is likely wrong (or it's a
+                  name/phrase not in the list) — investigate, do NOT auto-retract
+        many   -> solve normally
+      (python xw.py candidates <id> lists the actual fitting words.)
+   c. python xw.py claim <id> --role solver --model <tier>  (dashboard shows it
+      in-flight), THEN dispatch the clue as a PARALLEL subagent. A later
+      commit/candidate auto-clears the claim.
+   d. Subagent returns answer + confidence + parse. Optionally sanity-check with
+      python wordlist.py contains <ANSWER> (a miss is a yellow flag, not proof —
+      the list isn't exhaustive), then commit.
+   e. After each commit, read `conflicts` and `newly_constrained` from output.
+        - newly_constrained -> re-queue them (pattern shrank; often now unique/few).
         - conflicts -> run the conflict-resolution routine below.
-   e. Optionally dispatch a verifier on freshly-locked entries.
+   f. Optionally dispatch a verifier on freshly-locked entries.
 3. PARSE RESCUE: for every entry whose parse felt shaky during solving
    (some clue words unexplained, indicators stretched, solver expressed
    doubt), dispatch a fresh Parser subagent with the prior parse as a hint,
@@ -88,6 +102,32 @@ Concurrent commits are safe: every mutating command holds an exclusive
 filesystem lock on `<state>.lock` for the duration of its load-mutate-save
 cycle, so parallel subagents cannot lose each other's writes. Readers are
 unlocked (writes are atomic via `os.replace`).
+
+### Watching it live (the dashboard)
+
+`python xw.py serve` starts a localhost-only web dashboard (stdlib `http.server`
+— no dependencies, and it makes **no** model calls of its own). Open the printed
+URL in a browser and leave it up for the whole solve. It polls every ~1.5s and
+shows three things, all of them a pure projection of `state.json` plus the
+sibling event log:
+
+- **the grid filling in** — cells colour by status (one-crosser / corroborated /
+  conflict), and cells of clues currently being solved get a pulsing outline;
+- **a clue-by-clue report** — status chip, answer, confidence, and parse per
+  entry, split Across/Down (hover a clue to highlight its cells, click to pin);
+- **an activity feed** — every claim/commit/conflict/retract/verify in order.
+
+Two pieces make this work, and the orchestrator must use them:
+
+1. `claim <id> --role <r> --model <m>` right before dispatching a subagent. This
+   is the *only* way the dashboard knows a clue is in-flight (the engine
+   otherwise only knows committed vs not). `commit`, `candidate`, and `retract`
+   all clear the claim automatically; `release <id>` clears an abandoned one.
+2. The event log at `<state>-events.jsonl`, appended by every mutating command.
+   It's reset on `init`/`from-text --init`. Safe to delete; never affects the grid.
+
+Because the dashboard carries the live picture, keep terminal narration terse —
+a one-line scoreboard per round is enough; let the browser be the report.
 
 **Parallelism = breadth across independent clues, not many instances on one
 clue.** Clues with no shared cells can be solved simultaneously with zero
@@ -193,7 +233,8 @@ orchestrator will route the entry back through the Parser.
 | `xw.py init <puzzle.json>` | load a puzzle into fresh state |
 | `xw.py state` | ASCII grid + solved/unsolved/conflicts |
 | `xw.py stats` | progress glance: solved/total, verified, conflicts, cells filled/corroborated |
-| `xw.py frontier` | unsolved entries ranked by constraint (scheduler view) |
+| `xw.py frontier [--candidates]` | unsolved entries ranked by constraint; `--candidates` adds a wordlist verdict per clue |
+| `xw.py candidates <id> [--max N]` | words fitting a clue's current pattern + verdict (none/unique/few/many) |
 | `xw.py entry <id>` | one clue: text, pattern, candidates, parse, verified |
 | `xw.py pattern <id>` | known-letter pattern, e.g. `?A??E?` (a letter once its one crosser is committed) |
 | `xw.py pattern-detail <id>` | per-cell: suggested letter, which entry suggested it, at what confidence |
@@ -204,7 +245,14 @@ orchestrator will route the entry back through the Parser.
 | `xw.py parse <id> "<parse>"` | swap an entry's parse in place (no propagation; clears the verify verdict) |
 | `xw.py verify <id> true\|false` | record verifier verdict |
 | `xw.py conflicts` | all contradicted cells with provenance |
+| `xw.py claim <id> [--role R] [--model M]` | mark an entry in-flight (dashboard shows it being solved) |
+| `xw.py release <id>` | clear an in-flight claim (abandoned dispatch) |
+| `xw.py serve [--port N]` | live HTML dashboard of the solve on localhost (stdlib only) |
+| `xw.py view` | one-shot dashboard snapshot as JSON (what `serve` polls) |
 | `check.py pattern <PAT> <ANSWER>` | does it fit `?A?`-style pattern? |
+| `wordlist.py match <PAT> [--limit N]` | list words fitting a pattern (standalone) + verdict |
+| `wordlist.py contains <ANSWER>` | is an answer a listed word? (soft real-word gate) |
+| `wordlist.py build` / `info` | (re)build the cache / show cache stats |
 
 ---
 
@@ -253,7 +301,20 @@ shared cells, so you only have to get the coordinates right. See
   no model reasoning. Read it if you want to understand the voting/hardening rules.
 - `xw.py` — CLI over the engine. Includes the text→JSON parser (`from-text`).
   This is the main tool surface.
-- `check.py` — pattern-fits-answer gate (the only deterministic answer check).
+- `check.py` — pattern-fits-answer gate (see `wordlist.py` for the candidate
+  and real-word checks).
+- `wordlist.py` — deterministic candidate generation: words fitting a pattern,
+  with none/unique/few/many verdicts, plus a real-word `contains` check.
+- `WordWeb.txt` — the source word list (300k entries incl. plurals, phrases,
+  proper nouns). Override with the `CRYPTIC_WORDLIST` env var.
+- `wl_cache/` — length-bucketed, normalized cache built from `WordWeb.txt` on
+  first use; auto-rebuilt when the source changes. Disposable.
+- `dashboard.html` — the live dashboard UI, served by `xw.py serve`. A pure
+  renderer of `/view` + `/events`; edit it freely, it makes no model calls.
+- `dashboard.bat` — one-click startup: optionally load a puzzle, then serve and
+  open the browser.
+- `<state>-events.jsonl` — append-only activity log written beside the state
+  file (e.g. `state-events.jsonl`); the dashboard's feed and a solve post-mortem.
 - `puzzles/example.json` — a complete tiny worked example (3×3).
 - `puzzles/sample.txt` — a full 15×15 cryptic in the text input format.
 

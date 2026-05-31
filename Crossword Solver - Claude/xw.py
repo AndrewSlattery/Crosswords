@@ -38,13 +38,16 @@ atomic via os.replace).
 
 import argparse
 import contextlib
+import http.server
 import json
 import os
 import re
 import sys
 import time
+import urllib.parse
 
 from engine import Grid, DEFAULT_STATE_PATH
+import wordlist
 
 
 # --------------------------------------------------------------------------
@@ -56,6 +59,25 @@ def _print(obj, pretty=False):
         print(obj)
     else:
         print(json.dumps(obj, indent=2 if pretty else None))
+
+
+def _read_text(path):
+    """Read a human-authored file tolerantly.
+
+    Puzzle text/JSON pasted from the web or Word is frequently Windows-1252
+    (em dashes, en dashes, curly quotes), not UTF-8, so a strict utf-8 open
+    blows up on a byte like 0x97 (cp1252 '—'). Try UTF-8 (with/without BOM)
+    first so genuine UTF-8 wins, then cp1252, then latin-1 (which can decode
+    any byte). Whatever the source encoding, we end up with proper Unicode.
+    """
+    with open(path, "rb") as f:
+        raw = f.read()
+    for enc in ("utf-8-sig", "utf-8", "cp1252", "latin-1"):
+        try:
+            return raw.decode(enc)
+        except UnicodeDecodeError:
+            continue
+    return raw.decode("latin-1", errors="replace")
 
 
 # --------------------------------------------------------------------------
@@ -107,6 +129,186 @@ def _state_lock(state_path):
             os.rmdir(lock_dir)
         except OSError:
             pass
+
+
+# --------------------------------------------------------------------------
+# Event log (observability overlay, a sibling file to the state)
+# --------------------------------------------------------------------------
+#
+# Every mutating command appends one JSON line to "<state>-events.jsonl". This
+# is the narrative the dashboard's activity feed renders, plus a durable
+# post-mortem of how a solve unfolded. It is NOT part of the recomputable grid
+# (the engine ignores it); losing it never corrupts state.
+
+def _events_path(state_path):
+    return os.path.splitext(state_path)[0] + "-events.jsonl"
+
+
+def _log_event(state_path, etype, entry=None, **detail):
+    rec = {"ts": time.time(), "type": etype}
+    if entry is not None:
+        rec["entry"] = entry
+    rec.update({k: v for k, v in detail.items() if v is not None})
+    path = _events_path(state_path)
+    os.makedirs(os.path.dirname(os.path.abspath(path)) or ".", exist_ok=True)
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(rec) + "\n")
+
+
+def _reset_events(state_path):
+    """Truncate the event log — called on a fresh init/from-text load."""
+    path = _events_path(state_path)
+    os.makedirs(os.path.dirname(os.path.abspath(path)) or ".", exist_ok=True)
+    open(path, "w", encoding="utf-8").close()
+
+
+def read_events(state_path, limit=400):
+    """Return the most recent events, newest first (for the dashboard feed)."""
+    path = _events_path(state_path)
+    if not os.path.exists(path):
+        return []
+    out = []
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                out.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    return out[-limit:][::-1]
+
+
+# --------------------------------------------------------------------------
+# Stats + dashboard view (pure projections of state)
+# --------------------------------------------------------------------------
+
+def compute_stats(grid):
+    total = len(grid.entries)
+    solved = sum(1 for e in grid.entries.values() if e.committed)
+    verified = sum(1 for e in grid.entries.values() if e.verified is True)
+    rejected = sum(1 for e in grid.entries.values() if e.verified is False)
+    cells_total = len(grid._cells)
+    cells_filled = sum(1 for c in grid._cells.values() if c.letter() is not None)
+    cells_corroborated = sum(1 for c in grid._cells.values() if c.corroborated())
+    conflicts = len(grid.conflicts())
+    return {
+        "entries": {
+            "total": total, "solved": solved, "unsolved": total - solved,
+            "verified": verified, "verify_rejected": rejected,
+            "pct_solved": round(100 * solved / total, 1) if total else 0.0,
+        },
+        "cells": {
+            "total": cells_total, "filled": cells_filled,
+            "corroborated": cells_corroborated,
+            "pct_filled": round(100 * cells_filled / cells_total, 1) if cells_total else 0.0,
+        },
+        "conflicts": conflicts,
+    }
+
+
+def build_view(state_path):
+    """A single dashboard-ready snapshot: grid cells + clues + stats.
+
+    The render truth lives here in Python (reusing the engine's own cell
+    queries), so the browser stays a dumb renderer that can't drift from the
+    engine's notion of corroboration/conflict.
+    """
+    grid = Grid.load(state_path)
+
+    cells = []
+    for (r, c), cell in sorted(grid._cells.items()):
+        letter = cell.letter()
+        if cell.conflicted():
+            st = "conflict"
+        elif cell.corroborated():
+            st = "corroborated"
+        elif letter:
+            st = "tentative"
+        else:
+            st = "empty"
+        cells.append({
+            "r": r, "c": c, "letter": letter, "state": st,
+            "votes": {eid: v["letter"] for eid, v in cell.votes.items()},
+        })
+
+    entries = []
+    for eid, e in grid.entries.items():
+        entries.append({
+            "id": eid, "number": e.number, "direction": e.direction,
+            "clue": e.clue, "enumeration": e.enumeration, "length": e.length,
+            "pattern": grid.pattern(eid),
+            "committed": e.committed,
+            "confidence": e.committed_confidence if e.committed else None,
+            "parse": e.parse, "verified": e.verified,
+            "status": grid.status(eid),
+            "claim": e.claim,
+            "candidates": e.candidates,
+            "constraint_score": round(grid.constraint_score(eid), 3),
+            "cells": e.cells,
+            "start": e.cells[0] if e.cells else None,
+        })
+    entries.sort(key=lambda x: (0 if x["direction"] == "across" else 1, x["number"]))
+
+    return {
+        "rows": grid.rows, "cols": grid.cols,
+        "cells": cells, "entries": entries,
+        "stats": compute_stats(grid),
+        "conflicts": grid.conflicts(),
+        "generated": time.time(),
+    }
+
+
+# --------------------------------------------------------------------------
+# Live dashboard server (stdlib only; binds to localhost; makes no LLM calls)
+# --------------------------------------------------------------------------
+
+DASHBOARD_HTML_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                   "dashboard.html")
+
+
+class _DashboardHandler(http.server.BaseHTTPRequestHandler):
+    # cmd_serve sets this before the server starts
+    state_path = DEFAULT_STATE_PATH
+
+    def _send(self, code, body, ctype):
+        if isinstance(body, str):
+            body = body.encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        try:
+            self.wfile.write(body)
+        except (BrokenPipeError, ConnectionResetError):
+            pass
+
+    def do_GET(self):
+        path = urllib.parse.urlparse(self.path).path
+        if path in ("/", "/index.html"):
+            try:
+                with open(DASHBOARD_HTML_PATH, encoding="utf-8") as f:
+                    self._send(200, f.read(), "text/html; charset=utf-8")
+            except FileNotFoundError:
+                self._send(500, "dashboard.html not found next to xw.py",
+                           "text/plain")
+        elif path == "/view":
+            try:
+                self._send(200, json.dumps(build_view(self.state_path)),
+                           "application/json")
+            except FileNotFoundError:
+                self._send(200, json.dumps({"error": "no puzzle loaded yet"}),
+                           "application/json")
+        elif path == "/events":
+            self._send(200, json.dumps(read_events(self.state_path)),
+                       "application/json")
+        else:
+            self._send(404, "not found", "text/plain")
+
+    def log_message(self, *args):
+        pass   # keep the terminal quiet; the dashboard is the log
 
 
 # --------------------------------------------------------------------------
@@ -286,8 +488,7 @@ def parse_text_puzzle(text):
 
 def cmd_from_text(args):
     """Parse a text-format puzzle and either print, save, or init state from it."""
-    with open(args.input, encoding="utf-8") as f:
-        text = f.read()
+    text = _read_text(args.input)
     data = parse_text_puzzle(text)
     summary = {
         "rows": data["rows"],
@@ -304,6 +505,9 @@ def cmd_from_text(args):
         grid = Grid(data)
         with _state_lock(args.state):
             grid.save(args.state)
+        _reset_events(args.state)
+        _log_event(args.state, "init", entries=len(grid.entries),
+                   rows=grid.rows, cols=grid.cols)
         summary["state"] = args.state
         wrote_anything = True
     if not wrote_anything:
@@ -315,11 +519,13 @@ def cmd_from_text(args):
 
 
 def cmd_init(args):
-    with open(args.puzzle, encoding="utf-8") as f:
-        data = json.load(f)
+    data = json.loads(_read_text(args.puzzle))
     grid = Grid(data)
     with _state_lock(args.state):
         grid.save(args.state)
+    _reset_events(args.state)
+    _log_event(args.state, "init", entries=len(grid.entries),
+               rows=grid.rows, cols=grid.cols)
     _print({"ok": True, "entries": len(grid.entries),
             "rows": grid.rows, "cols": grid.cols}, args.pretty)
 
@@ -343,29 +549,7 @@ def cmd_state(args):
 def cmd_stats(args):
     """Quick progress glance — handy for an orchestrator to log between rounds."""
     grid = Grid.load(args.state)
-    total = len(grid.entries)
-    solved = sum(1 for e in grid.entries.values() if e.committed)
-    verified = sum(1 for e in grid.entries.values() if e.verified is True)
-    rejected = sum(1 for e in grid.entries.values() if e.verified is False)
-    cells_total = len(grid._cells)
-    cells_filled = sum(1 for c in grid._cells.values() if c.letter() is not None)
-    cells_corroborated = sum(1 for c in grid._cells.values() if c.corroborated())
-    conflicts = len(grid.conflicts())
-    _print({
-        "entries": {
-            "total": total, "solved": solved,
-            "unsolved": total - solved,
-            "verified": verified, "verify_rejected": rejected,
-            "pct_solved": round(100 * solved / total, 1) if total else 0.0,
-        },
-        "cells": {
-            "total": cells_total,
-            "filled": cells_filled,
-            "corroborated": cells_corroborated,
-            "pct_filled": round(100 * cells_filled / cells_total, 1) if cells_total else 0.0,
-        },
-        "conflicts": conflicts,
-    }, args.pretty)
+    _print(compute_stats(grid), args.pretty)
 
 
 def cmd_entry(args):
@@ -399,18 +583,47 @@ def cmd_crossings(args):
 
 
 def cmd_frontier(args):
-    """Unsolved entries, most-constrained first — the scheduler's view."""
+    """Unsolved entries, most-constrained first — the scheduler's view.
+
+    With --candidates, also fold in the deterministic wordlist verdict per clue
+    so the orchestrator can spot 'unique' clues (solve-by-confirm) and 'none'
+    clues (a crossing letter is probably wrong) at a glance.
+    """
     grid = Grid.load(args.state)
     rows = []
     for eid in grid.unsolved():
-        rows.append({
+        pat = grid.pattern(eid)
+        row = {
             "id": eid,
             "clue": grid.entries[eid].clue,
-            "pattern": grid.pattern(eid),
+            "pattern": pat,
             "constraint_score": round(grid.constraint_score(eid), 3),
-        })
+        }
+        if args.candidates:
+            n = len(wordlist.matches(pat))
+            row["candidate_count"] = n
+            row["verdict"] = wordlist.verdict(n)
+        rows.append(row)
     rows.sort(key=lambda r: r["constraint_score"], reverse=True)
     _print(rows, args.pretty)
+
+
+def cmd_candidates(args):
+    """Deterministic candidates for ONE entry's current crossing pattern.
+
+    verdict: none (no fit — suspect a crossing letter, or an unlisted
+    name/phrase), unique (confirm-only), few (pass as hints), many (solve).
+    """
+    grid = Grid.load(args.state)
+    e = grid.entries[args.id]
+    pat = grid.pattern(args.id)
+    found = wordlist.matches(pat)
+    _print({
+        "id": args.id, "pattern": pat, "length": e.length,
+        "committed": e.committed,
+        "count": len(found), "verdict": wordlist.verdict(len(found)),
+        "matches": found[:args.max], "truncated": len(found) > args.max,
+    }, args.pretty)
 
 
 def cmd_candidate(args):
@@ -419,6 +632,9 @@ def cmd_candidate(args):
         res = grid.add_candidate(args.id, args.answer, args.conf,
                                  parse=args.parse, source=args.source)
         grid.save(args.state)
+        _log_event(args.state, "candidate", entry=args.id,
+                   answer=args.answer.upper(), confidence=args.conf,
+                   source=args.source)
     _print(res, args.pretty)
 
 
@@ -431,6 +647,14 @@ def cmd_commit(args):
             _print(res, args.pretty)
             sys.exit(1)
         grid.save(args.state)
+        _log_event(args.state, "commit", entry=args.id,
+                   answer=args.answer.upper(), confidence=args.conf,
+                   source=args.source,
+                   corroborated=res.get("corroborated_cells"),
+                   total_cells=res.get("total_cells"),
+                   newly_constrained=res.get("newly_constrained") or None,
+                   conflict_cells=[[c["row"], c["col"]]
+                                   for c in res["conflicts"]] or None)
     _print(res, args.pretty)
     if res["conflicts"]:
         sys.exit(2)   # signal: commit succeeded but the grid is now contradictory
@@ -441,6 +665,9 @@ def cmd_retract(args):
         grid = Grid.load(args.state)
         res = grid.retract(args.id)
         grid.save(args.state)
+        _log_event(args.state, "retract", entry=args.id,
+                   conflict_cells=[[c["row"], c["col"]]
+                                   for c in res["conflicts"]] or None)
     _print(res, args.pretty)
 
 
@@ -449,6 +676,8 @@ def cmd_verify(args):
         grid = Grid.load(args.state)
         res = grid.set_verified(args.id, args.value == "true")
         grid.save(args.state)
+        _log_event(args.state, "verify", entry=args.id,
+                   value=(args.value == "true"))
     _print(res, args.pretty)
 
 
@@ -467,12 +696,57 @@ def cmd_parse(args):
             _print(res, args.pretty)
             sys.exit(1)
         grid.save(args.state)
+        _log_event(args.state, "parse", entry=args.id, parse=args.parse)
     _print(res, args.pretty)
 
 
 def cmd_conflicts(args):
     grid = Grid.load(args.state)
     _print(grid.conflicts(), args.pretty)
+
+
+def cmd_claim(args):
+    """Mark an entry in-flight so the dashboard shows it being worked on."""
+    with _state_lock(args.state):
+        grid = Grid.load(args.state)
+        res = grid.claim(args.id, role=args.role, model=args.model)
+        grid.save(args.state)
+        _log_event(args.state, "claim", entry=args.id,
+                   role=args.role, model=args.model)
+    _print(res, args.pretty)
+
+
+def cmd_release(args):
+    """Clear an in-flight claim (e.g. a dispatch was abandoned)."""
+    with _state_lock(args.state):
+        grid = Grid.load(args.state)
+        res = grid.release(args.id)
+        grid.save(args.state)
+        _log_event(args.state, "release", entry=args.id)
+    _print(res, args.pretty)
+
+
+def cmd_view(args):
+    """One-shot dashboard snapshot as JSON (what the live view polls)."""
+    _print(build_view(args.state), args.pretty)
+
+
+def cmd_serve(args):
+    """Serve the live dashboard on localhost (stdlib only; no LLM calls)."""
+    _DashboardHandler.state_path = args.state
+    server = http.server.ThreadingHTTPServer(("127.0.0.1", args.port),
+                                              _DashboardHandler)
+    url = f"http://127.0.0.1:{args.port}"
+    print(f"Crossword dashboard live at {url}")
+    print(f"  state:  {os.path.abspath(args.state)}")
+    print(f"  events: {os.path.abspath(_events_path(args.state))}")
+    print("Open that URL in a browser; it refreshes itself. Ctrl-C to stop.")
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nDashboard stopped.")
+    finally:
+        server.server_close()
 
 
 def render_ascii(grid: Grid) -> str:
@@ -522,8 +796,33 @@ def build_parser():
     s = add("pattern"); s.add_argument("id"); s.set_defaults(fn=cmd_pattern)
     s = add("pattern-detail"); s.add_argument("id"); s.set_defaults(fn=cmd_pattern_detail)
     s = add("crossings"); s.add_argument("id"); s.set_defaults(fn=cmd_crossings)
-    s = add("frontier"); s.set_defaults(fn=cmd_frontier)
+    s = add("frontier")
+    s.add_argument("--candidates", action="store_true",
+                   help="also show wordlist candidate count + verdict per clue")
+    s.set_defaults(fn=cmd_frontier)
     s = add("conflicts"); s.set_defaults(fn=cmd_conflicts)
+    s = add("view"); s.set_defaults(fn=cmd_view)
+
+    s = add("candidates")
+    s.add_argument("id")
+    s.add_argument("--max", type=int, default=25,
+                   help="max matches to include in output (default 25)")
+    s.set_defaults(fn=cmd_candidates)
+
+    s = add("serve")
+    s.add_argument("--port", type=int, default=8000,
+                   help="localhost port for the dashboard (default 8000)")
+    s.set_defaults(fn=cmd_serve)
+
+    s = add("claim")
+    s.add_argument("id")
+    s.add_argument("--role", default="solver",
+                   help="solver|conflict|parser|verifier (label only)")
+    s.add_argument("--model", default=None,
+                   help="haiku|sonnet|opus (label only, shown on the dashboard)")
+    s.set_defaults(fn=cmd_claim)
+
+    s = add("release"); s.add_argument("id"); s.set_defaults(fn=cmd_release)
 
     s = add("candidate")
     s.add_argument("id"); s.add_argument("answer"); s.add_argument("conf", type=float)

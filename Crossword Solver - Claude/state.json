@@ -53,18 +53,12 @@
           9
         ]
       ],
-      "candidates": [
-        {
-          "answer": "HORSEPOWER",
-          "confidence": 0.95,
-          "parse": "<hp> HORSEPOWER = H + ((PROSWERE)* outside O)",
-          "source": "solver"
-        }
-      ],
-      "committed": "HORSEPOWER",
-      "committed_confidence": 0.95,
-      "parse": "<hp> HORSEPOWER = H + ((PROSWERE)* outside O)",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "2D",
@@ -105,18 +99,12 @@
           1
         ]
       ],
-      "candidates": [
-        {
-          "answer": "OBELISK",
-          "confidence": 0.95,
-          "parse": "<monument> OBELISK = [-N]OBEL + I + SK",
-          "source": "solver"
-        }
-      ],
-      "committed": "OBELISK",
-      "committed_confidence": 0.95,
-      "parse": "<monument> OBELISK = [-N]OBEL + I + SK",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "3D",
@@ -149,18 +137,12 @@
           3
         ]
       ],
-      "candidates": [
-        {
-          "answer": "SOLVE",
-          "confidence": 0.95,
-          "parse": "<work on crossword> SOLVE = SOLE outside V",
-          "source": "solver"
-        }
-      ],
-      "committed": "SOLVE",
-      "committed_confidence": 0.95,
-      "parse": "<work on crossword> SOLVE = SOLE outside V",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "4D",
@@ -209,18 +191,12 @@
           5
         ]
       ],
-      "candidates": [
-        {
-          "answer": "PANTYHOSE",
-          "confidence": 0.95,
-          "parse": "<skintight garment> PANTYHOSE = PAN + (THOSE+Y)*",
-          "source": "solver"
-        }
-      ],
-      "committed": "PANTYHOSE",
-      "committed_confidence": 0.95,
-      "parse": "<skintight garment> PANTYHOSE = PAN + (THOSE+Y)*",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "5D",
@@ -293,18 +269,12 @@
           7
         ]
       ],
-      "candidates": [
-        {
-          "answer": "WHIPPERSNAPPERS",
-          "confidence": 0.85,
-          "parse": "<Army brats> WHIPPERSNAPPERS",
-          "source": "solver"
-        }
-      ],
-      "committed": "WHIPPERSNAPPERS",
-      "committed_confidence": 0.85,
-      "parse": "<Army brats> WHIPPERSNAPPERS",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "6D",
@@ -337,18 +307,12 @@
           9
         ]
       ],
-      "candidates": [
-        {
-          "answer": "RIPEN",
-          "confidence": 0.85,
-          "parse": "<Mature> RIPEN = RIP + (PEN ultimately)",
-          "source": "solver"
-        }
-      ],
-      "committed": "RIPEN",
-      "committed_confidence": 0.85,
-      "parse": "<Mature> RIPEN = RIP + (PEN ultimately)",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "7A",
@@ -377,18 +341,12 @@
           14
         ]
       ],
-      "candidates": [
-        {
-          "answer": "PLUG",
-          "confidence": 0.95,
-          "parse": "<advertise> PLUG = PUG outside L",
-          "source": "solver"
-        }
-      ],
-      "committed": "PLUG",
-      "committed_confidence": 0.95,
-      "parse": "<advertise> PLUG = PUG outside L",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "7D",
@@ -437,18 +395,12 @@
           11
         ]
       ],
-      "candidates": [
-        {
-          "answer": "POLICEMAN",
-          "confidence": 0.95,
-          "parse": "<Bobby> POLICEMAN = LOP<- + (CINEMA)*",
-          "source": "solver"
-        }
-      ],
-      "committed": "POLICEMAN",
-      "committed_confidence": 0.95,
-      "parse": "<Bobby> POLICEMAN = LOP<- + (CINEMA)*",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "8D",
@@ -489,18 +441,12 @@
           13
         ]
       ],
-      "candidates": [
-        {
-          "answer": "UPSILON",
-          "confidence": 0.9,
-          "parse": "<Y-fronts/Greek Y> UPSILON",
-          "source": "solver"
-        }
-      ],
-      "committed": "UPSILON",
-      "committed_confidence": 0.9,
-      "parse": "<Y-fronts/Greek Y> UPSILON",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "9A",
@@ -529,24 +475,18 @@
           3
         ]
       ],
-      "candidates": [
-        {
-          "answer": "REEL",
-          "confidence": 0.95,
-          "parse": "<section of film> REEL = \" REAL\\",
-          "source": "solver"
-        }
-      ],
-      "committed": "REEL",
-      "committed_confidence": 0.95,
-      "parse": "<section of film> REEL = \" REAL\\",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "10A",
       "direction": "across",
       "number": 10,
-      "clue": "Love to install a language for digital application (4,6)",
+      "clue": "Cosmetic is a boring love language (4,6)",
       "length": 10,
       "enumeration": [
         4,
@@ -594,18 +534,12 @@
           14
         ]
       ],
-      "candidates": [
-        {
-          "answer": "NAILPOLISH",
-          "confidence": 0.95,
-          "parse": "<digital application> NAIL POLISH = NIL outside A + POLISH",
-          "source": "solver"
-        }
-      ],
-      "committed": "NAILPOLISH",
-      "committed_confidence": 0.95,
-      "parse": "<digital application> NAIL POLISH = NIL outside A + POLISH",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "11A",
@@ -642,18 +576,12 @@
           5
         ]
       ],
-      "candidates": [
-        {
-          "answer": "LIVERY",
-          "confidence": 0.95,
-          "parse": "<uniform> LIVERY = LIVE + RY",
-          "source": "solver"
-        }
-      ],
-      "committed": "LIVERY",
-      "committed_confidence": 0.95,
-      "parse": "<uniform> LIVERY = LIVE + RY",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "12A",
@@ -698,24 +626,18 @@
           14
         ]
       ],
-      "candidates": [
-        {
-          "answer": "PINOCHLE",
-          "confidence": 0.95,
-          "parse": "<card game> PINOCHLE = PINE outside (OCH + L)",
-          "source": "solver"
-        }
-      ],
-      "committed": "PINOCHLE",
-      "committed_confidence": 0.95,
-      "parse": "<card game> PINOCHLE = PINE outside (OCH + L)",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "13A",
       "direction": "across",
       "number": 13,
-      "clue": "Slide over middle of floes in snowmobile (6)",
+      "clue": "Snowmobile putting child in very middle of floes (6)",
       "length": 6,
       "enumeration": [
         6
@@ -746,18 +668,12 @@
           5
         ]
       ],
-      "candidates": [
-        {
-          "answer": "SKIDOO",
-          "confidence": 0.95,
-          "parse": "<snowmobile> SKIDOO = SKID + O + O",
-          "source": "solver"
-        }
-      ],
-      "committed": "SKIDOO",
-      "committed_confidence": 0.95,
-      "parse": "<snowmobile> SKIDOO = SKID + O + O",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "14D",
@@ -806,18 +722,12 @@
           3
         ]
       ],
-      "candidates": [
-        {
-          "answer": "DECATHLON",
-          "confidence": 0.95,
-          "parse": "<event> DECATHLON = (CLOTHED AN)*",
-          "source": "solver"
-        }
-      ],
-      "committed": "DECATHLON",
-      "committed_confidence": 0.95,
-      "parse": "<event> DECATHLON = (CLOTHED AN)*",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "15A",
@@ -862,24 +772,18 @@
           14
         ]
       ],
-      "candidates": [
-        {
-          "answer": "REARMING",
-          "confidence": 0.95,
-          "parse": "<supplying more weapons> REARMING = REAR + MING",
-          "source": "solver"
-        }
-      ],
-      "committed": "REARMING",
-      "committed_confidence": 0.95,
-      "parse": "<supplying more weapons> REARMING = REAR + MING",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "16D",
       "direction": "down",
       "number": 16,
-      "clue": "French article to capture a revolutionary form of self-catered accommodation (9)",
+      "clue": "Marginal writer cannot state work, getting exposed (9)",
       "length": 9,
       "enumeration": [
         9
@@ -922,18 +826,12 @@
           9
         ]
       ],
-      "candidates": [
-        {
-          "answer": "APARTOTEL",
-          "confidence": 0.9,
-          "parse": "<self-catered accommodation> APARTOTEL = (ALTERATOP)*",
-          "source": "solver"
-        }
-      ],
-      "committed": "APARTOTEL",
-      "committed_confidence": 0.9,
-      "parse": "<self-catered accommodation> APARTOTEL = (ALTERATOP)*",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "17A",
@@ -978,18 +876,12 @@
           7
         ]
       ],
-      "candidates": [
-        {
-          "answer": "LUNCHEON",
-          "confidence": 0.95,
-          "parse": "<formal meal> LUNCHEON = (UNCLEOHN)*",
-          "source": "solver"
-        }
-      ],
-      "committed": "LUNCHEON",
-      "committed_confidence": 0.95,
-      "parse": "<formal meal> LUNCHEON = (UNCLEOHN)*",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "18D",
@@ -1030,24 +922,18 @@
           1
         ]
       ],
-      "candidates": [
-        {
-          "answer": "UFOLOGY",
-          "confidence": 0.95,
-          "parse": "<Pseudoscience> UFOLOGY = (FOOLGUY)*",
-          "source": "solver"
-        }
-      ],
-      "committed": "UFOLOGY",
-      "committed_confidence": 0.95,
-      "parse": "<Pseudoscience> UFOLOGY = (FOOLGUY)*",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "19A",
       "direction": "across",
       "number": 19,
-      "clue": "Hero regularly expressed fame in medals (6)",
+      "clue": "Maybe AC/DC number has no good fills (6)",
       "length": 6,
       "enumeration": [
         6
@@ -1078,24 +964,12 @@
           14
         ]
       ],
-      "candidates": [
-        {
-          "answer": "ANNUAL",
-          "confidence": 0.85,
-          "parse": "<medals> ANNUAL",
-          "source": "solver"
-        },
-        {
-          "answer": "HONORS",
-          "confidence": 0.75,
-          "parse": "<medals> HONORS",
-          "source": "solver"
-        }
-      ],
-      "committed": "ANNUAL",
-      "committed_confidence": 0.85,
-      "parse": "<medals> ANNUAL",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "20D",
@@ -1136,18 +1010,12 @@
           13
         ]
       ],
-      "candidates": [
-        {
-          "answer": "ARTLESS",
-          "confidence": 0.95,
-          "parse": "<Frank> ARTLESS = HEARTLESS - HE",
-          "source": "solver"
-        }
-      ],
-      "committed": "ARTLESS",
-      "committed_confidence": 0.95,
-      "parse": "<Frank> ARTLESS = HEARTLESS - HE",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "21A",
@@ -1192,24 +1060,18 @@
           7
         ]
       ],
-      "candidates": [
-        {
-          "answer": "FOOTSTEP",
-          "confidence": 0.95,
-          "parse": "<pad> FOOTSTEP = (PETS+TOO+F)<-",
-          "source": "solver"
-        }
-      ],
-      "committed": "FOOTSTEP",
-      "committed_confidence": 0.95,
-      "parse": "<pad> FOOTSTEP = (PETS+TOO+F)<-",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "22D",
       "direction": "down",
       "number": 22,
-      "clue": "Car manufacturer integrates larger frames (5)",
+      "clue": "Car manufacturer innovates larger frames (5)",
       "length": 5,
       "enumeration": [
         5
@@ -1236,24 +1098,18 @@
           5
         ]
       ],
-      "candidates": [
-        {
-          "answer": "TESLA",
-          "confidence": 0.95,
-          "parse": "<car manufacturer> TESLA = (.integra)TES LA(rger.)",
-          "source": "solver"
-        }
-      ],
-      "committed": "TESLA",
-      "committed_confidence": 0.95,
-      "parse": "<car manufacturer> TESLA = (.integra)TES LA(rger.)",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "23A",
       "direction": "across",
       "number": 23,
-      "clue": "When swineherd may go to get cosy (6)",
+      "clue": "Where swineherd may go to get cosy (6)",
       "length": 6,
       "enumeration": [
         6
@@ -1284,24 +1140,18 @@
           14
         ]
       ],
-      "candidates": [
-        {
-          "answer": "TOASTY",
-          "confidence": 0.9,
-          "parse": "<to get cosy> TOASTY = TO A STY",
-          "source": "solver"
-        }
-      ],
-      "committed": "TOASTY",
-      "committed_confidence": 0.9,
-      "parse": "<to get cosy> TOASTY = TO A STY",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "24D",
       "direction": "down",
       "number": 24,
-      "clue": "Should we hear anything? (5)",
+      "clue": "Source of radiation stored in back with nitrogen gas (5)",
       "length": 5,
       "enumeration": [
         5
@@ -1328,18 +1178,12 @@
           11
         ]
       ],
-      "candidates": [
-        {
-          "answer": "AUGHT",
-          "confidence": 0.95,
-          "parse": "<anything> AUGHT = \" OUGHT\\",
-          "source": "solver"
-        }
-      ],
-      "committed": "AUGHT",
-      "committed_confidence": 0.95,
-      "parse": "<anything> AUGHT = \" OUGHT\\",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "25A",
@@ -1392,18 +1236,12 @@
           9
         ]
       ],
-      "candidates": [
-        {
-          "answer": "COALESCENT",
-          "confidence": 0.95,
-          "parse": "<combining> COALESCENT = COAL + E + SCENT",
-          "source": "solver"
-        }
-      ],
-      "committed": "COALESCENT",
-      "committed_confidence": 0.95,
-      "parse": "<combining> COALESCENT = COAL + E + SCENT",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "26A",
@@ -1432,18 +1270,12 @@
           14
         ]
       ],
-      "candidates": [
-        {
-          "answer": "GREW",
-          "confidence": 0.95,
-          "parse": "<increased> GREW = (W + ERG)<-",
-          "source": "solver"
-        }
-      ],
-      "committed": "GREW",
-      "committed_confidence": 0.95,
-      "parse": "<increased> GREW = (W + ERG)<-",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "27A",
@@ -1472,24 +1304,18 @@
           3
         ]
       ],
-      "candidates": [
-        {
-          "answer": "LYON",
-          "confidence": 0.95,
-          "parse": "<French city> LYON = L + YON",
-          "source": "solver"
-        }
-      ],
-      "committed": "LYON",
-      "committed_confidence": 0.95,
-      "parse": "<French city> LYON = L + YON",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     },
     {
       "id": "28A",
       "direction": "across",
       "number": 28,
-      "clue": "Despot and a bishop partner with someone pulling strings? (10)",
+      "clue": "Undress excitedly when faced with six-pack's implausibility (10)",
       "length": 10,
       "enumeration": [
         10
@@ -1536,18 +1362,12 @@
           14
         ]
       ],
-      "candidates": [
-        {
-          "answer": "ABSOLUTIST",
-          "confidence": 0.9,
-          "parse": "<Despot> ABSOLUTIST = A + B + SO + LUTIST",
-          "source": "solver"
-        }
-      ],
-      "committed": "ABSOLUTIST",
-      "committed_confidence": 0.9,
-      "parse": "<Despot> ABSOLUTIST = A + B + SO + LUTIST",
-      "verified": null
+      "candidates": [],
+      "committed": null,
+      "committed_confidence": 1.0,
+      "parse": null,
+      "verified": null,
+      "claim": null
     }
   ]
 }

@@ -32,6 +32,7 @@ from __future__ import annotations
 import json
 import os
 import string
+import time
 from dataclasses import dataclass, field, asdict
 from typing import Optional
 
@@ -119,6 +120,11 @@ class Entry:
     committed_confidence: float = 1.0                # confidence of committed answer
     parse: Optional[str] = None
     verified: Optional[bool] = None                  # parse-check result
+    # Observability overlay — does NOT affect propagation or the grid. Records
+    # which subagent (if any) is currently working this entry, so a live view
+    # can show what's in flight. Set by claim(); cleared by any
+    # commit/candidate/retract. None when nobody is actively on it.
+    claim: Optional[dict] = None                     # {"role","model","since"}
 
 
 @dataclass
@@ -290,6 +296,29 @@ class Grid:
     def unsolved(self) -> list:
         return [eid for eid, e in self.entries.items() if not e.committed]
 
+    def status(self, entry_id: str) -> str:
+        """Derived lifecycle state for an entry — the dashboard's status chip.
+
+        One of: unsolved, dispatched (a subagent is on it), candidate (floated
+        but not committed), committed, conflicted (committed into a contested
+        cell), verified, rejected. Recomputed fresh each call; only the
+        'dispatched' state depends on the stored claim overlay.
+        """
+        e = self.entries[entry_id]
+        if e.committed:
+            if any(self._cells[(r, c)].conflicted() for (r, c) in e.cells):
+                return "conflicted"
+            if e.verified is True:
+                return "verified"
+            if e.verified is False:
+                return "rejected"
+            return "committed"
+        if e.claim:
+            return "dispatched"
+        if e.candidates:
+            return "candidate"
+        return "unsolved"
+
     # ---- mutations (the only ways state changes) -------------------------
 
     def commit(self, entry_id: str, answer: str,
@@ -314,6 +343,7 @@ class Grid:
         entry.committed = answer.upper()
         entry.committed_confidence = confidence
         entry.parse = parse
+        entry.claim = None   # the work that was in flight has landed
         self._record_candidate(entry, answer, confidence, parse, source)
         self._rebuild()
 
@@ -342,6 +372,7 @@ class Grid:
         entry.committed_confidence = 1.0
         entry.parse = None
         entry.verified = None
+        entry.claim = None
         self._rebuild()
         return {"ok": True, "conflicts": self.conflicts()}
 
@@ -354,6 +385,7 @@ class Grid:
         auto-commit rule) decides which to commit.
         """
         entry = self.entries[entry_id]
+        entry.claim = None   # subagent has returned a candidate; no longer in flight
         self._record_candidate(entry, answer, confidence, parse, source)
         return {"ok": True, "candidates": entry.candidates}
 
@@ -378,6 +410,24 @@ class Grid:
         # parse no longer applies — clear it so re-verification is required.
         entry.verified = None
         return {"ok": True, "id": entry_id, "parse": parse}
+
+    def claim(self, entry_id: str, role: str = "solver",
+              model: Optional[str] = None) -> dict:
+        """Mark an entry as being actively worked by a subagent.
+
+        Pure observability: never affects propagation or the grid. The
+        orchestrator calls this right before dispatching a subagent, so the
+        live dashboard can show what's in flight (and which role/model is on
+        it). Any commit / candidate / retract clears it automatically.
+        """
+        entry = self.entries[entry_id]
+        entry.claim = {"role": role, "model": model, "since": time.time()}
+        return {"ok": True, "id": entry_id, "claim": entry.claim}
+
+    def release(self, entry_id: str) -> dict:
+        """Clear an entry's in-flight claim (e.g. a dispatch was abandoned)."""
+        self.entries[entry_id].claim = None
+        return {"ok": True, "id": entry_id}
 
     # ---- helpers ---------------------------------------------------------
 

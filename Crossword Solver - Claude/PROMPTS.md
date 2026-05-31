@@ -219,9 +219,18 @@ does not already have it in context.
 
 ## How the orchestrator wires these up
 
-1. `frontier` → take the top-k most-constrained unsolved entries.
-2. For each, fill the **Solver** template (`pattern` and `pattern-detail` come
-   straight from the CLI) and dispatch as parallel subagents.
+0. Run `python xw.py serve` in a second terminal first; everything below is
+   reflected on the live dashboard as it happens.
+1. `frontier --candidates` → the top-k most-constrained unsolved entries, each
+   with a wordlist verdict. Branch before dispatching: **unique** → dispatch a
+   cheap subagent only to *confirm* the single word's wordplay; **few** → pass
+   `candidates <id>` as hints; **none** → suspect a crossing letter (investigate,
+   don't auto-retract); **many** → solve normally.
+2. For each, `python xw.py claim <id> --role solver --model <haiku|sonnet|opus>`
+   (so the dashboard shows it in-flight), then fill the **Solver** template
+   (`pattern` and `pattern-detail` come straight from the CLI) and dispatch as
+   parallel subagents. A commit/candidate auto-clears the claim; use
+   `release <id>` only if you abandon a dispatch without solving it.
 3. Parse each returned JSON block; `commit` answers above your confidence bar,
    `candidate` the rest.
 4. On any commit with `conflicts`, fill the **Conflict resolver** template and
