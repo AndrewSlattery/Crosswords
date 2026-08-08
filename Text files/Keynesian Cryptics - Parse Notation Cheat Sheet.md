@@ -28,11 +28,11 @@ This depends on which end of the clue the definition is found.
 
 ## 2. Deletions & Derivations
 
-- `[-...]` : Delete indicated parts, signalled by constructions like "mostly", "topless" or "endless".
+- `[-...]` : Delete indicated parts, signalled by constructions like "mostly", "topless" or "endless". The deleted letters are placed lowercase within the `[-...]` notation; only the remaining letters are placed in uppercase.
   - "Mischievous kid suddenly going out of bounds" (282-Across-25) is parsed as `URCHIN = [-l]URCHIN[-g]`; the "bounds" of LURCHING are deleted.
-- `-, out of` : Delete the indicated strings, signalled by constructions like "without", "losing" or "away from", "quitting" respectively.
+- `-, off` : Delete the indicated strings, signalled by constructions like "without", "losing" or "away from", "quitting" respectively.
   - "Host's mad to snub bishop" (284-Across-9) is parsed as `ARMY = BARMY - B`; 'B' is deleted.
-  - "Vinegary wines ultimately thrown out by Spartan" (276-Across-12) is parsed as `ACETIC = _S out of ASCETIC`; 'S' is deleted.
+  - "Vinegary wines ultimately thrown out by Spartan" (276-Across-12) is parsed as `ACETIC = _S off ASCETIC`; 'S' is deleted.
 
 ## 3. Extractions, Charades & Hidden Words
 
